@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "meta-graph": {
+      "type": "stdio",
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "${CLAUDE_PLUGIN_ROOT}/mcp/meta-graph-mcp",
+        "meta-graph-mcp"
+      ],
+      "env": {
+        "META_ACCESS_TOKEN": "${META_ACCESS_TOKEN}",
+        "GRAPH_API_VERSION": "v25.0",
+        "META_GRAPH_READONLY": "0"
+      }
+    }
+  }
+}

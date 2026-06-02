@@ -1,0 +1,16 @@
+{
+  "_comment": "Community example. Copy the meta-graph block into your MCP client config (e.g. .mcp.json / Claude Code). NEVER commit a real token — keep your config gitignored. Setup: cd tools/meta-graph-mcp && python3 -m venv .venv && ./.venv/bin/python -m pip install -e .",
+  "mcpServers": {
+    "meta-graph": {
+      "type": "stdio",
+      "command": "./tools/meta-graph-mcp/start.sh",
+      "env": {
+        "META_ACCESS_TOKEN": "<YOUR_LONG_LIVED_USER_OR_SYSTEM_USER_TOKEN>",
+        "GRAPH_API_VERSION": "v25.0",
+        "META_DEFAULT_ACCOUNT": "act_XXXXXXXXXXXX",
+        "META_APP_SECRET": "<optional; enables appsecret_proof>",
+        "META_GRAPH_READONLY": "0"
+      }
+    }
+  }
+}

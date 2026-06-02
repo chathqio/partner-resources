@@ -1,0 +1,19 @@
+[project]
+name = "meta-graph-mcp"
+version = "0.1.0"
+description = "Comprehensive, self-contained Meta (Facebook) Graph/Marketing API MCP server. Never refuses an operation the Graph API supports."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "LicenseRef-Extendly-Partner" }
+authors = [{ name = "Extendly", email = "zach@getextendly.com" }]
+dependencies = ["mcp==1.12.2", "httpx==0.28.1"]
+
+[project.scripts]
+meta-graph-mcp = "meta_graph_mcp.__main__:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["meta_graph_mcp*"]

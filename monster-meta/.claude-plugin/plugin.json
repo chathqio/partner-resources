@@ -1,0 +1,15 @@
+{
+  "name": "monster-meta",
+  "version": "0.1.0",
+  "description": "Strategic Facebook/Meta advertising operator: a 20-chunk framework plus the self-contained meta-graph MCP (never refuses a valid Graph API operation) for end-to-end campaign planning, deployment, auditing, and scaling. Bring your own Meta access token.",
+  "author": {
+    "name": "Extendly",
+    "email": "zach@getextendly.com",
+    "url": "https://getextendly.com"
+  },
+  "homepage": "https://github.com/chathqio/partner-resources/tree/master/monster-meta",
+  "repository": "https://github.com/chathqio/partner-resources",
+  "license": "LicenseRef-Extendly-Partner",
+  "keywords": ["meta-ads", "facebook-ads", "advertising", "marketing", "mcp"],
+  "mcpServers": "./.mcp.json"
+}

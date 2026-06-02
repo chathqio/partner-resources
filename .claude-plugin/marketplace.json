@@ -1,0 +1,14 @@
+{
+  "name": "extendly-partner-resources",
+  "owner": {
+    "name": "Extendly",
+    "email": "zach@getextendly.com"
+  },
+  "plugins": [
+    {
+      "name": "monster-meta",
+      "source": "./monster-meta",
+      "description": "Monster Meta — strategic Facebook/Meta ad operator (plan, build, audit, scale) over the self-contained meta-graph MCP. Bring your own Meta token."
+    }
+  ]
+}
