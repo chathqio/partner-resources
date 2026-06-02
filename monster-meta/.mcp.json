@@ -10,7 +10,7 @@
         "meta-graph-mcp"
       ],
       "env": {
-        "META_ACCESS_TOKEN": "${META_ACCESS_TOKEN}",
+        "META_ACCESS_TOKEN": "${user_config.meta_access_token}",
         "GRAPH_API_VERSION": "v25.0",
         "META_GRAPH_READONLY": "0"
       }

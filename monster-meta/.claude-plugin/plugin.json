@@ -11,5 +11,14 @@
   "repository": "https://github.com/chathqio/partner-resources",
   "license": "LicenseRef-Extendly-Partner",
   "keywords": ["meta-ads", "facebook-ads", "advertising", "marketing", "mcp"],
+  "userConfig": {
+    "meta_access_token": {
+      "type": "string",
+      "title": "Meta access token",
+      "description": "Your long-lived Meta access token (System User token with ads_management + business_management). Stored in your OS keychain, never in plaintext. See docs/meta-token-setup.md to create one.",
+      "sensitive": true,
+      "required": true
+    }
+  },
   "mcpServers": "./.mcp.json"
 }

@@ -63,29 +63,41 @@ Still in System Users, with your new system user selected, click **Assign Assets
    - `pages_read_engagement` and `pages_manage_ads` — needed when ads post from a Page
 5. Generate, then **copy the token now** — Meta shows it only once. Store it in your password manager.
 
-## Step 5 — Give the token to the MCP
+## Step 5 — Give the token to the plugin
 
-The plugin's MCP config reads the token from the `META_ACCESS_TOKEN` environment variable.
-Set it where Claude Code will see it. The simplest option is your shell profile:
+The plugin asks for your token as a **secure config value** (`meta_access_token`). Claude Code
+stores it in your **operating system's keychain** — not a plaintext file — and hands it to the MCP
+server automatically. You enter it once.
 
-```bash
-# ~/.zshrc or ~/.bashrc
-export META_ACCESS_TOKEN="EAAG...your-long-lived-token..."
-```
+Two ways to provide it:
 
-Open a new terminal (so the variable is loaded), then launch Claude Code from there. The
-`meta-graph` MCP will pick it up automatically.
+- **Secure (recommended)** — inside Claude Code, run the slash command and paste the token at the
+  **masked** prompt:
+  ```
+  /plugin install monster-meta@extendly-partner-resources
+  ```
+  Already installed? Set or update the token the same masked way:
+  ```
+  /plugin configure monster-meta
+  ```
+- **Non-interactive** — pass it on the command line (note: this records the token in your shell
+  history; rotate it afterward if you're on a shared machine):
+  ```bash
+  claude plugin install monster-meta@extendly-partner-resources --config meta_access_token=YOUR_TOKEN
+  ```
 
 > **Prerequisite:** the MCP server runs via [`uv`](https://docs.astral.sh/uv/). Install it once:
 > `brew install uv` (macOS) or `curl -LsSf https://astral.sh/uv/install.sh | sh`. `uv` builds the
 > server's isolated Python environment on first launch — you do not create a virtualenv yourself.
 
+After setting the token, **restart Claude Code** so the `meta-graph` MCP server loads with it.
+
 ## Step 6 — Verify
 
-In Claude Code, run `/monster-meta setup`. It calls `whoami` to confirm the token is valid,
-shows which scopes you granted, lists the ad accounts it can see, and writes your account
-config. If `whoami` fails, re-check Steps 4–5 (most often: the variable isn't exported in the
-terminal you launched Claude Code from, or a required scope is missing).
+After restarting Claude Code, run `/monster-meta:setup`. It calls `whoami` to confirm the token
+is valid, shows which scopes you granted, lists the ad accounts it can see, and writes your
+account config. If `whoami` fails, re-check Steps 4–5 (most often: you didn't restart after
+setting the token, the token wasn't saved, or a required scope is missing).
 
 ---
 
@@ -93,11 +105,13 @@ terminal you launched Claude Code from, or a required scope is missing).
 
 | Symptom | Likely cause / fix |
 |---|---|
-| `whoami` says token invalid/expired | Token not set in the launching terminal, or you generated an expiring user token instead of a System User token. Re-do Step 4 with expiration **Never**. |
+| `whoami` says token invalid/expired | Token not saved, didn't restart Claude Code after setting it, or you generated an expiring user token instead of a System User token. Set it via `/plugin configure monster-meta`, restart, and re-do Step 4 with expiration **Never** if needed. |
+| `mcp__meta-graph__*` tools missing | The MCP didn't load: confirm you restarted Claude Code after setting the token, and that `uv` is installed. |
 | `get_ad_accounts` returns nothing | The System User has no ad accounts assigned. Go back to Step 3 and assign them. |
 | Writes fail with a permissions error | Missing `ads_management`, or the system user has only **View** (not **Manage**) on the ad account. |
 | "uv: command not found" | Install `uv` (see prerequisite above) and restart Claude Code. |
 | Ads won't deliver from the Page | Add `pages_manage_ads` + `pages_read_engagement` and assign the Page to the system user. |
 
-Your token is sensitive — it can spend money on your ad accounts. The MCP never prints or logs
-the token value, but keep `META_ACCESS_TOKEN` out of any file you commit to git.
+Your token is sensitive — it can spend money on your ad accounts. Claude Code keeps it in your OS
+keychain and the MCP never prints or logs the value. If you ever pass it via `--config` on the
+command line, clear it from your shell history (or rotate the token) on shared machines.

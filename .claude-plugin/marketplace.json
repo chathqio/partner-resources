@@ -1,5 +1,8 @@
 {
   "name": "extendly-partner-resources",
+  "metadata": {
+    "description": "Private plugin marketplace for Extendly partner-program members. Ships Monster Meta (Facebook/Meta ad operator) and future partner tools."
+  },
   "owner": {
     "name": "Extendly",
     "email": "zach@getextendly.com"
