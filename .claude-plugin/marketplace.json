@@ -1,7 +1,7 @@
 {
   "name": "extendly-partner-resources",
   "metadata": {
-    "description": "Private plugin marketplace for Extendly partner-program members. Ships Monster Meta (Facebook/Meta ad operator) and future partner tools."
+    "description": "Private plugin marketplace for Extendly partner-program members. Ships Monster Meta (Facebook/Meta ad operator) and FITD Builder (niche foot-in-the-door offer builder), with more partner tools to come."
   },
   "owner": {
     "name": "Extendly",
@@ -11,7 +11,12 @@
     {
       "name": "monster-meta",
       "source": "./monster-meta",
-      "description": "Monster Meta — strategic Facebook/Meta ad operator (plan, build, audit, scale) over the self-contained meta-graph MCP. Bring your own Meta token."
+      "description": "Monster Meta - strategic Facebook/Meta ad operator (plan, build, audit, scale) over the self-contained meta-graph MCP. Bring your own Meta token."
+    },
+    {
+      "name": "fitd-builder",
+      "source": "./fitd-builder",
+      "description": "FITD Builder - crafts a complete niche-specific foot-in-the-door offer (hook + story + hydrated OfferIQ pillars + ad/VSL/landing copy) from a niche and a chosen offer off the live offer menu."
     }
   ]
 }

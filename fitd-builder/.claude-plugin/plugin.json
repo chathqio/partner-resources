@@ -1,0 +1,14 @@
+{
+  "name": "fitd-builder",
+  "version": "0.1.0",
+  "description": "Crafts a complete niche-specific foot-in-the-door offer: Expert Secrets narrative (hook + story) plus a hydrated OfferIQ 7-pillar offer and deployable ad/VSL/landing copy, from a niche and a chosen offer off the live offer menu. Self-contained; no token or MCP.",
+  "author": {
+    "name": "Extendly",
+    "email": "zach@getextendly.com",
+    "url": "https://getextendly.com"
+  },
+  "homepage": "https://github.com/chathqio/partner-resources/tree/master/fitd-builder",
+  "repository": "https://github.com/chathqio/partner-resources",
+  "license": "LicenseRef-Extendly-Partner",
+  "keywords": ["offers", "foot-in-the-door", "copywriting", "expert-secrets", "marketing", "offeriq"]
+}

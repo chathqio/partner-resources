@@ -1,0 +1,141 @@
+# OfferIQ - FITD offer menu (canonical registry)
+#
+# This is the data-only source of truth for the foot-in-the-door offers Extendly
+# partners can build. The OfferIQ index page is a curated subset; THIS file is the
+# superset. The fitd-builder skill reads this on every run to seed a niche offer.
+#
+# Schema and how to add an offer: see README.md in this folder.
+# Served at: https://partner.extendly.com/offeriq/offer_menu/offers.yaml
+#
+# Keep this data-only. No UI fields (icons, accents, video URLs), no prose beyond
+# what seeds an offer build.
+
+version: 1
+
+offers:
+  - id: speed-to-lead
+    name: Speed-to-Lead
+    status: active            # active | draft | retired
+    summary: >
+      Inbound leads answered in minutes, without the owner sitting on the phone
+      or living in the inbox.
+    one_problem: >
+      "When a lead comes in and no one answers fast, my customer loses the sale to
+      whoever answered first."
+    one_problem_why: >
+      Close to the money: every slow response is a lost conversion. Verifiable:
+      businesses pay full-time front-desk salaries to solve exactly this, so the
+      market baseline sits well above the $100-300/mo wedge price.
+    target_market:
+      niche: >
+        US home-services and local-trade agencies on HighLevel (HVAC, plumbing,
+        electrical, roofing).
+      fits: >
+        Owner-operators and small teams that generate inbound calls and messages
+        but can't sit on the phone or live in the inbox. Leads go cold before
+        anyone replies. They already run HighLevel and want speed without hiring a
+        front desk.
+    proof:
+      title: A live test call and test message, handled by the AI
+      lines:
+        - Calls the voice AI took, inbound messages auto-replied
+        - "First-time-to-answer: instant vs. the old two-day reply"
+        - '"X messages / X minutes of calls you would have handled yourself"'
+      close: >
+        Then the customer's "turn it on", and where the number goes: GMB, website.
+    pillars:
+      lead_magnet: >
+        The prospect calls our AI, which acts as the receptionist for THEIR
+        business live on the call. They hear what they've been missing, and if they
+        like it they schedule a call on our sales calendar. We run that call and
+        close at $100 to $300/mo; the demo reaction is the hook. The magnet books
+        and arms the call, it doesn't close.
+      intake: >
+        Channels they get leads/messages in (Facebook, Instagram, WhatsApp,
+        Telegram, SMS, email, HighLevel channels) - fast multi-select. Voice-AI
+        config: niche; products and services; one call outcome (transfer OR book,
+        pick one); cell number if transfer; a few common Q&A. Nothing makes the
+        prospect leave the form.
+      training_block: >
+        The 15-minute training block orients the customer to the Voice AI /
+        Conversation AI surface and the Universal Inbox in HighLevel, so the
+        launch-call test call and message land on familiar ground.
+      implementation: |
+        Step 1: Deploy the Speed-to-Lead snapshot (templated, one-click). ~20 min
+        Step 2: Map intake fields into the voice + conversation AI config and knowledge base. ~30 min
+        Step 3: Place the conversation-AI widget on the site, link it to the Universal Inbox. ~25 min
+        Step 4: Sanity-check a test call and test message; send one personalized note. ~15 min
+        Total: ~1.5 human-hours, well under the 3-hour ceiling.
+      test_and_launch: >
+        Proof (under 15): trigger a test call and message live; the customer
+        watches the AI handle both. Go-live (next 15): how calls start reaching
+        this number now (GMB and website), who flips it on. Logged for the CS
+        check-in.
+      ascension_hook: >
+        Once leads are answered instantly, the next gap is obvious: getting them
+        booked and showed on the sales calendar. The ascension is
+        appointment-setting / nurture. CS records it and raises it at the two-week
+        check-in; we do not pitch it during onboarding.
+
+  - id: reputation
+    name: Reputation Management
+    status: active
+    summary: >
+      An active review presence: solicit the happy ones, respond to all, mitigate
+      the bad ones, automatically.
+    one_problem: >
+      "This business doesn't have enough four and five star reviews, so it loses
+      new customers it never sees."
+    one_problem_why: >
+      Close to the money: weak social proof and a weaker GMB ranking suppress new
+      business. Verifiable: a crowded market of review tools already prices this
+      outcome, and owners ask for it constantly.
+    target_market:
+      niche: >
+        Established local service businesses doing good work with a thin review
+        profile (home services, trades, clinics).
+      fits: >
+        Businesses doing solid work whose online reputation doesn't reflect it.
+        They forget to ask, replies pile up, and the occasional bad review sits
+        unanswered. They want a steady drip of four and five star reviews without
+        chasing customers by hand.
+    proof:
+      title: AI checks disposition, then solicits the review
+      lines:
+        - A positive-disposition conversation auto-soliciting a review
+        - The review responder replying to a posted review
+        - 'Run against the last 30 days of clients: "two reviews on day one"'
+      close: >
+        Non-happy path: still ask, plus the owner's direct line to make it right.
+    pillars:
+      lead_magnet: >
+        A free marketing audit: we run the HighLevel prospecting tool against the
+        prospect's business and in about three minutes get a real report on where
+        their reputation stands across Google, Facebook, Yelp and the native list.
+        The report is why the prospect books, and what we walk into the sales call
+        holding. We run that call and close at $100 to $300/mo.
+      intake: >
+        One-time vs. ongoing service (pick one; sets when the review ask fires).
+        Which review platforms to target (Google, Facebook, Yelp, native list,
+        custom). A simple lead-to-customer flag. All fast pick-or-type, nothing to
+        look up.
+      training_block: >
+        The 15-minute training block orients the customer to the reviews and
+        reputation area in HighLevel (solicitations + review responder), so the
+        launch demo lands on familiar ground.
+      implementation: |
+        Step 1: Deploy the review-area snapshot (B009-style flow as the base). ~20 min
+        Step 2: Configure the lead-to-customer trigger and review-ask timing from intake. ~25 min
+        Step 3: Connect the selected review platforms; turn on the review responder. ~20 min
+        Step 4: Sanity-check the disposition scan on recent clients; send one personalized note. ~15 min
+        Total: ~1.3 human-hours, well under the 3-hour ceiling.
+      test_and_launch: >
+        Proof (under 15): a positive-disposition auto-solicit + responder +
+        non-happy path, run on the last 30 days so it's real. Go-live (next 15):
+        comfortable turning solicitation on now, when service next completes so the
+        first ask fires. Logged for the CS check-in.
+      ascension_hook: >
+        A steady review flow surfaces two pulls: do more for a happy, referring
+        customer (expansion), or fix the no-deals-no-reviews gap, which points at a
+        lead-generation offer (acquisition). CS records both for the check-in
+        calls; not pitched during onboarding.
