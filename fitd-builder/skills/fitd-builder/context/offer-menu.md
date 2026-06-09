@@ -29,7 +29,12 @@ test_and_launch, ascension_hook). Schema: see the menu's own README.
    in the distributed plugin (where `partner/offeriq` does not exist).
 
 Tell the user which source you used (live vs. snapshot) so they know whether the menu
-is current. Only offers with `status: active` are selectable.
+is current. Only offers with `status: active` count.
+
+**How each command uses the menu:**
+- `contextualize` **selects** an active offer to adapt (the offer must be on the menu).
+- `build` uses the menu as **reference exemplars** only (to show what good pillars look
+  like); it constructs a new offer and does not select one.
 
 ### If the URL ever changes
 
@@ -38,12 +43,12 @@ update this one line; nothing else in the skill hardcodes it.
 
 ## Output path
 
-The hydrated package is written as one markdown file named after the niche
-(kebab-case), e.g. `single-location-med-spas.md`.
+All outputs are markdown, named in kebab-case, written to a cwd-relative folder (create
+it if missing). Always confirm the resolved path with the user before writing.
 
-- **Default:** `./niche-offers/<niche>.md` (relative to the cwd). Create the folder
-  if missing. This keeps the skill identical in every install.
-- **Extendly-internal:** point runs at `partner/offeriq/niche_contex/<niche>.md` when
-  building for the OfferIQ workspace.
+- **contextualize** -> `./niche-offers/<niche>.md` (the niche go-to-market package).
+  Extendly-internal: point runs at `partner/offeriq/niche_contex/<niche>.md`.
+- **build** -> `./offer-drafts/<offer-slug>.md` (the from-scratch offer submission packet
+  for Extendly).
 
-Always confirm the resolved output path with the user before writing.
+These defaults keep the skill identical in every install.

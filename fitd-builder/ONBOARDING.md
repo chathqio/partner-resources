@@ -23,28 +23,30 @@ No configuration is required. The plugin ships with a bundled snapshot of the of
 each run it also tries to fetch the live menu from
 `https://partner.extendly.com/offeriq/offer_menu/offers.yaml`, so it always has the latest offers.
 
-## Step 2 - (Optional) choose where offers are written
+## Step 2 - (Optional) choose where output is written
 
-By default the skill writes each finished offer package to `./niche-offers/<niche>.md` in your
-current folder. You don't need to set anything; just run a build from the folder where you want the
-output. If asked, the skill confirms the output path before writing.
+All output is markdown, written cwd-relative: `contextualize` -> `./niche-offers/<niche>.md`,
+`build` -> `./offer-drafts/<offer-slug>.md`. You don't need to set anything; just run from the folder
+where you want the output. The skill confirms the path before writing.
 
 ## Step 3 - First run
 
 ```
-/fitd-builder:build single-location med spas + Speed-to-Lead
+/fitd-builder:contextualize single-location med spas + Speed-to-Lead
 ```
 
 The skill resolves the offer menu, tightens the niche with you, researches the vertical, and walks
-through gated stages (problem, narrative, pillars, assets) before writing the package. Or run
-`/fitd-builder:research <niche + offer>` to do just the niche research.
+through gated stages (problem, narrative, pillars, assets) before writing the package. To create a
+new offer from scratch instead, run `/fitd-builder:build <what you deliver + who it's for>`; for just
+the niche dig, `/fitd-builder:research <niche + menu offer>`.
 
 ## Done
 
 Tell the user fitd-builder is ready and they can:
 - `/fitd-builder` - open the skill
-- `/fitd-builder:build <niche + offer>` - build a full niche offer package
-- `/fitd-builder:research <niche + offer>` - just the niche research
+- `/fitd-builder:contextualize <niche + menu offer>` - adapt a menu offer to a niche (full package)
+- `/fitd-builder:build <what you deliver + who it's for>` - construct a new offer (submission packet)
+- `/fitd-builder:research <niche + menu offer>` - just the niche research
 
 ## If something breaks
 

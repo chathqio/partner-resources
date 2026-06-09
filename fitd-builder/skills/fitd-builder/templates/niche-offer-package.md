@@ -1,6 +1,6 @@
 # Niche Offer Package Template
 
-The hydrated output of `/fitd-builder build`. Write one file per niche to the resolved
+The hydrated output of `/fitd-builder contextualize`. Write one file per niche to the resolved
 output path (default `./niche-offers/{niche-slug}.md`; Extendly-internal:
 `partner/offeriq/niche_contex/{niche-slug}.md`).
 

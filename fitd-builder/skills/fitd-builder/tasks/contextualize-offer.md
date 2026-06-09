@@ -1,18 +1,23 @@
 <purpose>
-Run the full pipeline that turns a niche + a chosen menu offer into one hydrated,
-deployable FITD offer package: research → one specific problem → Expert Secrets
-narrative → all 7 OfferIQ pillars → ad/VSL/landing assets. Gated stage by stage so the
-user stays in control and each stage builds on an approved prior stage.
+Contextualize an **existing Extendly menu offer** to a specific niche: take a chosen
+active offer off the menu and run the full pipeline that adapts it into one hydrated,
+deployable niche package: research → one specific problem → Expert Secrets narrative →
+all 7 OfferIQ pillars retuned for the niche → ad/VSL/landing assets. Gated stage by
+stage so the user stays in control and each stage builds on an approved prior stage.
+(This is for offers that ALREADY exist on the menu. To construct a brand-new offer from
+scratch, use `tasks/build-offer.md` instead.)
 </purpose>
 
 <user-story>
-As an agency partner, I want to hand the skill a niche and an offer and get back a
-complete, niche-specific foot-in-the-door offer - hook, story, mechanics, and ready
-copy - so that I can attract a specific person with a specific problem and close them.
+As an agency partner, I want to hand the skill a niche and an existing menu offer and
+get back a complete, niche-specific foot-in-the-door package - hook, story, mechanics,
+and ready copy - so that I can attract a specific person with a specific problem and
+close them.
 </user-story>
 
 <when-to-use>
-- The user runs /fitd-builder build, or asks for a full niche offer / package
+- The user runs /fitd-builder contextualize, or asks to adapt an existing menu offer to
+  a niche / produce a full niche package
 </when-to-use>
 
 <references>
@@ -44,7 +49,7 @@ Extendly-internal: `partner/offeriq/niche_contex/{niche-slug}.md`).
 Run `tasks/research-niche.md` for the confirmed niche + offer. Produce the five-part
 brief (pains, vocabulary, current vehicle, dollars at stake, objections sorted
 vehicle/internal/external). Present it and **gate**: "Approve this research, or correct
-it, before I build the offer."
+it, before I contextualize the offer."
 
 **Wait for approval.**
 </step>

@@ -1,7 +1,9 @@
-# Offer Quality Checklist
+# Offer Quality Checklist (contextualize)
 
-**Purpose:** Gate a hydrated niche offer package before delivery. Every item is
-pass/fail. Any fail must be fixed or explicitly flagged in the package's Build notes.
+**Purpose:** Gate a hydrated niche offer package from `/fitd-builder contextualize` before
+delivery. (For the from-scratch `/fitd-builder build`, use `offer-mechanics.md` instead.)
+Every item is pass/fail. Any fail must be fixed or explicitly flagged in the package's
+Build notes.
 
 ## Inputs & fit
 - [ ] The chosen offer exists on the resolved menu and is `status: active`

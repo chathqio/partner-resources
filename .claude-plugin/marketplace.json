@@ -16,7 +16,7 @@
     {
       "name": "fitd-builder",
       "source": "./fitd-builder",
-      "description": "FITD Builder - crafts a complete niche-specific foot-in-the-door offer (hook + story + hydrated OfferIQ pillars + ad/VSL/landing copy) from a niche and a chosen offer off the live offer menu."
+      "description": "FITD Builder - contextualize an existing menu offer to a niche (hook + story + hydrated OfferIQ pillars + ad/VSL/landing copy), or build a new offer from scratch against the OfferIQ 7-pillar standard as a submission packet."
     }
   ]
 }

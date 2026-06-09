@@ -11,8 +11,8 @@ that the offer I build speaks to a specific person with a specific problem.
 </user-story>
 
 <when-to-use>
-- The user runs /fitd-builder research, or asks to understand a niche before building
-- Stage 1 of /fitd-builder build (the build task calls this first)
+- The user runs /fitd-builder research, or asks to understand a niche before adapting an offer
+- Stage 1 of /fitd-builder contextualize (the contextualize task calls this first)
 </when-to-use>
 
 <references>

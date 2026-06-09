@@ -1,37 +1,44 @@
 ---
 name: fitd-builder
 type: standalone
-version: 0.1.0
+version: 0.2.0
 category: content
-description: Crafts a complete niche-specific foot-in-the-door offer package - Expert Secrets narrative (hook + story) + hydrated OfferIQ 7-pillar mechanics + deployable assets (ad hooks, VSL/story script, landing copy) - from a niche and a chosen offer off the live offer menu.
+description: Builds foot-in-the-door offers two ways. contextualize - adapt an existing Extendly menu offer to a specific niche (Expert Secrets hook + story + hydrated OfferIQ 7 pillars + ad/VSL/landing copy). build - construct a brand-new offer from scratch against the OfferIQ 7-pillar standard as a markdown submission packet for Extendly. Outputs are markdown only.
 allowed-tools: [Read, Write, Glob, Grep, Edit, AskUserQuestion, WebSearch, WebFetch]
 ---
 
 <activation>
 ## What
-Takes a **niche + a chosen offer** and produces a complete, niche-specific
-foot-in-the-door (FITD) offer package. It resolves the live offer menu, researches
-the vertical, then writes one hydrated markdown file: niche definition → the one
-specific problem → an Expert Secrets narrative (new opportunity, big domino,
-epiphany-bridge story, 3 secrets) → all seven OfferIQ pillars hydrated for the niche
-→ deployable assets (ad hook lines, a VSL/story script, landing-page copy).
+Builds foot-in-the-door (FITD) offers for Extendly agency partners, two ways:
+
+- **contextualize** - take an **existing menu offer** and adapt it to a specific niche.
+  Resolves the live offer menu, researches the vertical, and writes one hydrated markdown
+  package: niche definition → the one specific problem → an Expert Secrets narrative (new
+  opportunity, big domino, epiphany-bridge story, 3 secrets) → all 7 OfferIQ pillars
+  retuned for the niche → deployable assets (ad hook lines, VSL/story script, landing copy).
+- **build** - construct a **brand-new offer from scratch** against the OfferIQ 7-pillar
+  standard when no menu offer fits. Produces a niche-agnostic markdown offer-definition /
+  submission packet the partner sends to Extendly for review (no narrative, no copy, no YAML).
 
 The thesis: a FITD offer only attracts when its **hook + story** speak to a specific
-person with a specific problem. OfferIQ defines the niche-agnostic *mechanics*; this
-skill adds the niche *narrative* that makes those mechanics magnetic.
+person with a specific problem. OfferIQ defines the niche-agnostic *mechanics*; contextualize
+adds the niche *narrative* that makes them magnetic, and build creates new mechanics that
+hold to the standard.
 
 ## When to Use
-- Localizing a FITD offer for a specific vertical (e.g. "single-location med spas")
-- Turning a menu offer (Speed-to-Lead, Reputation Management, ...) into a
-  niche-specific magnet with hook + story
-- Generating ready-to-deploy ad hooks, a VSL/story script, and landing copy for one niche
-- Researching a niche's pains, vocabulary, and objections before crafting an offer
+- Adapting a menu offer (Speed-to-Lead, Reputation Management, ...) to a specific vertical
+  (e.g. "single-location med spas") with hook + story and ready copy -> contextualize
+- Creating a new FITD offer from a capability you can deliver, when nothing on the menu
+  fits -> build
+- Generating ad hooks, a VSL/story script, and landing copy for one niche -> contextualize
+- Researching a niche's pains, vocabulary, and objections before adapting an offer -> research
 
 ## Not For
 - Validating raw offer mechanics in the abstract (that is OfferIQ itself)
 - Full webinar builds (use `saving-grace-webinar`)
 - Generic copywriting with no niche and no offer
-- Editing the offer menu data (edit `offer_menu/offers.yaml` directly)
+- Editing the offer menu data or adding offers to it (Extendly adds approved offers to
+  `offer_menu/offers.yaml` manually)
 </activation>
 
 <persona>
@@ -42,8 +49,12 @@ person with a specific problem.
 
 ## Style
 - Writes in the niche's own vocabulary - the words the owner uses, not marketing-speak
-- Opinionated: challenges a niche that's too broad ("med spas" → "single-location med
-  spas at $40-80k/mo") before building
+- **A critical coach, not a yes-man.** Challenges a niche that's too broad ("med spas" →
+  "single-location med spas at $40-80k/mo"), and when building an offer holds every pillar
+  to its OfferIQ constraint - naming exactly why a weak answer fails and pushing back until
+  it passes or a gap is consciously accepted and recorded
+- **Researches to get confident** rather than accepting claims (e.g. verifies Pillar 1's
+  market anchor); surfaces uncertainty instead of asserting it away
 - Draft-ready output - every section is usable copy, not notes-to-self
 - Keeps the **attraction hook** (the ad/headline that stops the niche) distinct from
   the **call hook** (OfferIQ pillar 2's lead-magnet sales-call hook)
@@ -59,7 +70,8 @@ person with a specific problem.
 <commands>
 | Command | Description | Routes To |
 |---------|-------------|-----------|
-| `/fitd-builder build` | Full pipeline: resolve menu → research → problem → narrative → 7 pillars → assets, written to one file | tasks/build-niche-offer.md |
+| `/fitd-builder contextualize` | Adapt an existing menu offer to a niche: resolve menu → research → problem → narrative → 7 pillars → assets, written to one package file | tasks/contextualize-offer.md |
+| `/fitd-builder build` | Construct a new offer from scratch against the OfferIQ 7-pillar standard → markdown submission packet for Extendly | tasks/build-offer.md |
 | `/fitd-builder research` | Just the niche-research stage (pains, vocabulary, vehicle, dollars at stake, objections), anchored to a chosen offer | tasks/research-niche.md |
 </commands>
 
@@ -68,22 +80,28 @@ person with a specific problem.
 @context/offer-menu.md (how to resolve the live offer menu each run + the output-path policy)
 
 ## Load on Command
-@tasks/build-niche-offer.md (when the user runs /fitd-builder build or asks for a full niche offer)
+@tasks/contextualize-offer.md (when the user runs /fitd-builder contextualize or asks to adapt a menu offer to a niche)
+@tasks/build-offer.md (when the user runs /fitd-builder build or asks to construct a new offer from scratch)
 @tasks/research-niche.md (when the user runs /fitd-builder research)
 
 ## Load on Demand
-@frameworks/narrative-engine.md (when crafting the hook + story: new opportunity, big domino, epiphany bridge, 3 secrets)
-@frameworks/offeriq-pillars.md (when hydrating the 7 OfferIQ pillars or checking pillar fit)
-@templates/niche-offer-package.md (when assembling the hydrated output file)
-@checklists/offer-quality.md (before delivering, to gate the package)
+@frameworks/offeriq-pillars.md (both commands: the 7-pillar standard to hydrate or construct against)
+@frameworks/narrative-engine.md (contextualize only: the hook + story - new opportunity, big domino, epiphany bridge, 3 secrets)
+@templates/niche-offer-package.md (contextualize: the hydrated niche package)
+@templates/offer-definition.md (build: the from-scratch offer submission packet)
+@checklists/offer-quality.md (contextualize: gate the niche package before delivery)
+@checklists/offer-mechanics.md (build: gate the offer mechanics before submission)
 </routing>
 
 <greeting>
-fitd-builder loaded - niche-specific foot-in-the-door offer builder.
+fitd-builder loaded - foot-in-the-door offer builder.
 
-- **build** - full package: hook + story + 7 hydrated pillars + ad/VSL/landing copy
-- **research** - just the niche dig (pains, vocabulary, vehicle, dollars, objections)
+- **contextualize** - adapt an existing menu offer to a niche: hook + story + 7 hydrated
+  pillars + ad/VSL/landing copy. Give me a **niche** and which **offer** off the menu
+  (or say "list" to see the live menu). Example: "single-location med spas + Speed-to-Lead".
+- **build** - construct a new offer from scratch against the OfferIQ 7-pillar standard
+  (a submission packet for Extendly). Tell me what you can deliver and who it's for.
+- **research** - just the niche dig (pains, vocabulary, vehicle, dollars, objections).
 
-Give me a **niche** and which **offer** off the menu you want to wrap (or say "list"
-to see the live menu). Example: "single-location med spas + Speed-to-Lead".
+Which one?
 </greeting>
