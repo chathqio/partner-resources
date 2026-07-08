@@ -36,9 +36,11 @@ where you want the output. The skill confirms the path before writing.
 ```
 
 The skill resolves the offer menu, tightens the niche with you, researches the vertical, and walks
-through gated stages (problem, narrative, pillars, assets) before writing the package. To create a
-new offer from scratch instead, run `/fitd-builder:build <what you deliver + who it's for>`; for just
-the niche dig, `/fitd-builder:research <niche + menu offer>`.
+through gated stages (problem, narrative, pillars, assets) before writing the markdown package and
+rendering it as a visual, self-contained HTML artifact (a native Artifact, or a `.html` file when
+Artifact is unavailable). To create a new offer from scratch instead, run
+`/fitd-builder:build <what you deliver + who it's for>`; for just the niche dig,
+`/fitd-builder:research <niche + menu offer>`.
 
 ## Done
 

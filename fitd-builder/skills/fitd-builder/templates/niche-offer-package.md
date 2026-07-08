@@ -107,6 +107,9 @@ offer. Keep it tight.]
 | `{date}` | stamp at write time |
 
 ## Section notes
+- This markdown package is the source of truth. After it is approved, stage 6 renders
+  the same §0-§5 content as a visual, self-contained HTML artifact via
+  `frameworks/artifact-rendering.md` + `templates/offer-package-artifact.html`.
 - §0 Snapshot is the at-a-glance summary; fill it last from the finished sections.
 - §3 and §5 share content by design: §3 is the strategy, §5 is the deployable form of
   the same hook + story. They must stay consistent.

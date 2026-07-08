@@ -1,0 +1,830 @@
+<!-- ============================================================
+     FITD OFFER PACKAGE ARTIFACT - canonical fill-in template
+     ------------------------------------------------------------
+     Output of /fitd-builder contextualize, stage 6. This is a
+     COMPLETE, SELF-CONTAINED, WORKING example (the Speed-to-Lead x
+     lawn & landscape sample). To produce a niche package:
+
+       1. Copy this file's contents.
+       2. Replace ONLY the human-readable content inside each
+          <!-- ===== SECTION ===== --> region with the approved
+          package content (from templates/niche-offer-package.md).
+          Do NOT touch the <style>, the <svg><defs> icon library,
+          or the <script> at the end.
+       3. Publish via the Artifact tool, or write to a .html file
+          when Artifact is unavailable (see frameworks/
+          artifact-rendering.md for the wrapper + full procedure).
+
+     HARD RULES (a native Artifact's CSP enforces them):
+       - NO external hosts. No CDN scripts, webfonts, remote images,
+         or fetch/XHR. Everything stays inline. Icons are the inline
+         <symbol> set; add a new <symbol> rather than linking one.
+       - No em dashes anywhere.
+       - Keep the attraction hook (cover hookbar / ad hooks) distinct
+         from the call hook (pillar 2 detail).
+
+     REPEATABLE UNITS (add/remove to match the real package, do not
+     hardcode the sample counts):
+       - .prof-chip (attributes) . .comm-chip (communities) .
+         .search-chip (searches) . .alt-row (alternatives) .
+         .vocab-chip (phrase bank) . .sb-stat (dollar stats; the
+         grid auto-fits any count) . .fitd-fact (3) .
+         .fitd-story p (story beats; add class "epiphany" to the
+         ONE paragraph that is the epiphany realization, wherever it
+         falls; the first paragraph always gets the drop cap) .
+         .fitd-secret (exactly 3) .
+         .fitd-pillar (exactly 7) . .fitd-hook (5-10) .
+         .fitd-lp-block . .fitd-notes li
+
+     FLAGGED PILLAR variant (when a pillar does not pass): see
+     frameworks/artifact-rendering.md "Rendering a failing pillar"
+     for the exact class + badge + verdict + rail-chip swaps.
+     ============================================================ -->
+<title>FITD Offer Package · Speed-to-Lead × Lawn &amp; Landscape</title>
+
+<style>
+/* ============================================================
+   FITD Offer Package - self-contained editorial document.
+   Ported from the Extendly Offer Package Viewer. No external
+   hosts: tokens inlined, icons are inline SVG, brand mark is a
+   data URI, fonts fall back to the system stack. Deliberately
+   committed to a light "paper document" look regardless of the
+   viewer's theme (an offer package reads as a printed sheet).
+   ============================================================ */
+
+:root {
+  /* Extendly color tokens */
+  --ext-green: #37ca37; --ext-green-dark: #1a6527; --ext-green-light: #6ebf7c;
+  --ext-blue: #188bf6; --ext-blue-dark: #10397e; --ext-blue-mid: #4c8bf5;
+  --ext-red: #f15857; --ext-yellow: #fece42; --ext-navy: #041c45; --ext-black: #010415;
+  --ext-grad-primary: linear-gradient(106deg, #1a6527 1%, #6ebf7c 89%);
+  --ext-grad-text: linear-gradient(to right, #3e619b 14%, #d46e71 41%, #eb9e5a 67%, #fec846 87%);
+  --status-danger: var(--ext-red);
+
+  /* Type - Raleway if present, otherwise a clean system stack */
+  --font-headline: 'Raleway', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-body: 'Raleway', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Motion + shadow */
+  --t-quick: 0.2s;
+  --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --sh-card: 0 1px 5px rgba(0,0,0,0.1);
+  --sh-5: 0 0 25px rgba(0,0,0,0.2), 0 0 15px rgba(0,0,0,0.2), 0 0 3px rgba(0,0,0,0.4);
+
+  /* Document layer */
+  --doc-bg: #eef1f4;
+  --doc-surface: #ffffff;
+  --doc-ink: #0c1222;
+  --doc-ink-2: #41506a;
+  --doc-meta: #76819a;
+  --doc-hair: rgba(13,24,48,0.10);
+  --doc-hair-2: rgba(13,24,48,0.06);
+  --cover-navy: #07173a;
+  --cover-navy-2: #0d2452;
+  --pass: #1a6527;
+  --pass-bg: rgba(110,191,124,0.16);
+  --flag: #8a6500;
+  --flag-bg: rgba(255,206,67,0.22);
+  --rail-w: 300px;
+  --read-max: 760px;
+  --fitd-accent: var(--ext-blue);
+  --fitd-accent-dark: var(--ext-blue-dark);
+  --fitd-accent-soft: rgba(76,139,245,0.12);
+  --fitd-read-scale: 1;
+  --mk: url("data:image/png;base64,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");
+}
+
+/* hard-commit to the light paper look even when the viewer is in dark mode */
+html { scroll-behavior: smooth; background: var(--doc-bg); }
+body { background: var(--doc-bg); color: var(--doc-ink); margin: 0; font-family: var(--font-body); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+*, *::before, *::after { box-sizing: border-box; }
+::selection { background: rgba(76,139,245,0.22); }
+p { margin: 0; }
+
+/* inline-SVG icon system (stands in for Font Awesome) */
+.ic { width: 1em; height: 1em; display: inline-block; vertical-align: -0.125em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.ic.solid { fill: currentColor; stroke: none; }
+
+/* signature gradient-text accent (offer name) */
+.text-grad { background-image: var(--ext-grad-text); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+
+/* ---------------- APP SHELL ---------------- */
+.fitd-app { display: grid; grid-template-columns: var(--rail-w) 1fr; min-height: 100vh; }
+
+/* ---------------- LEFT RAIL ---------------- */
+.fitd-rail {
+  position: sticky; top: 0; align-self: start;
+  height: 100vh; overflow-y: auto;
+  background: var(--doc-surface);
+  border-right: 1px solid var(--doc-hair);
+  display: flex; flex-direction: column;
+  padding: 28px 22px 22px;
+}
+.fitd-rail::-webkit-scrollbar { width: 0; }
+.fitd-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 26px; }
+.fitd-brand .mk { width: 30px; height: 30px; background: var(--mk) center/contain no-repeat; }
+.fitd-brand .wm { font-family: var(--font-headline); font-weight: 800; font-size: 19px; letter-spacing: -0.02em; color: var(--cover-navy); }
+.fitd-rail-kicker { font-family: var(--font-headline); font-style: italic; font-weight: 700; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--doc-meta); margin-bottom: 6px; }
+.fitd-rail-title { font-family: var(--font-headline); font-weight: 800; font-size: 16px; line-height: 1.3; color: var(--doc-ink); margin-bottom: 22px; }
+
+.fitd-nav { display: flex; flex-direction: column; gap: 2px; margin: 0 -8px; }
+.fitd-nav-item { display: flex; align-items: baseline; gap: 12px; padding: 9px 12px; border-radius: 10px; cursor: pointer; color: var(--doc-ink-2); text-decoration: none; transition: background var(--t-quick) var(--ease-default), color var(--t-quick) var(--ease-default); position: relative; }
+.fitd-nav-item:hover { background: var(--doc-hair-2); color: var(--doc-ink); }
+.fitd-nav-item .n { font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--doc-meta); width: 18px; flex: none; transition: color var(--t-quick); }
+.fitd-nav-item .t { font-family: var(--font-headline); font-weight: 600; font-size: 13.5px; line-height: 1.35; }
+.fitd-nav-item.active { background: var(--fitd-accent-soft); }
+.fitd-nav-item.active .t { color: var(--fitd-accent-dark); }
+.fitd-nav-item.active .n { color: var(--fitd-accent); }
+.fitd-nav-item.active::before { content: ""; position: absolute; left: -22px; top: 8px; bottom: 8px; width: 3px; border-radius: 0 3px 3px 0; background: var(--fitd-accent); }
+
+.fitd-rail-foot { margin-top: auto; padding-top: 22px; }
+.fitd-verdict-chip { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: 14px; border: 1px solid var(--doc-hair); background: var(--doc-surface); }
+.fitd-verdict-chip .dot { width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; font-size: 13px; flex: none; }
+.fitd-verdict-chip.pass .dot { background: var(--pass-bg); color: var(--pass); }
+.fitd-verdict-chip.flag .dot { background: var(--flag-bg); color: var(--flag); }
+.fitd-verdict-chip .vc-label { font-size: 11px; color: var(--doc-meta); font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; }
+.fitd-verdict-chip .vc-val { font-family: var(--font-headline); font-weight: 700; font-size: 13.5px; line-height: 1.2; color: var(--doc-ink); }
+
+/* ---------------- MAIN COLUMN ---------------- */
+.fitd-main { min-width: 0; }
+.fitd-doc { background: var(--doc-surface); max-width: calc(var(--read-max) + 160px); margin: 0 auto; min-height: 100vh; border-left: 1px solid var(--doc-hair-2); border-right: 1px solid var(--doc-hair-2); }
+.fitd-read { max-width: var(--read-max); margin: 0 auto; padding: 0 40px; }
+.fitd-section { padding: 64px 0; border-top: 1px solid var(--doc-hair-2); scroll-margin-top: 12px; }
+.fitd-section:first-of-type { border-top: none; }
+
+/* Section header */
+.fitd-sec-head { margin-bottom: 30px; }
+.fitd-sec-row { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+.fitd-sec-num { font-family: var(--font-headline); font-weight: 800; font-size: 15px; letter-spacing: 0.02em; color: var(--fitd-accent); flex: none; }
+.fitd-sec-kicker { font-family: var(--font-headline); font-style: italic; font-weight: 700; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--doc-meta); }
+.fitd-sec-rule { flex: 1; height: 1px; background: var(--doc-hair); }
+.fitd-sec-title { font-family: var(--font-headline); font-weight: 800; font-size: 34px; line-height: 1.12; letter-spacing: -0.02em; color: var(--doc-ink); text-wrap: balance; }
+.fitd-sec-lede { font-size: calc(17px * var(--fitd-read-scale)); line-height: 1.6; color: var(--doc-ink-2); margin-top: 12px; max-width: 60ch; }
+
+/* ---------------- COVER (§0) ---------------- */
+.fitd-cover {
+  background:
+    radial-gradient(120% 90% at 85% -10%, rgba(76,139,245,0.30), transparent 55%),
+    radial-gradient(90% 80% at -10% 110%, rgba(55,202,55,0.16), transparent 55%),
+    linear-gradient(160deg, var(--cover-navy) 0%, var(--cover-navy-2) 100%);
+  color: #fff; padding: 56px 0 0;
+}
+.fitd-cover .fitd-read { padding-top: 8px; padding-bottom: 40px; }
+.fitd-cover-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 40px; }
+.fitd-cover-brand { display: flex; align-items: center; gap: 10px; }
+.fitd-cover-brand .mk { width: 26px; height: 26px; background: var(--mk) center/contain no-repeat; }
+.fitd-cover-brand .wm { font-family: var(--font-headline); font-weight: 800; font-size: 16px; color: #fff; letter-spacing: -0.02em; }
+.fitd-cover-tag { font-family: var(--font-headline); font-style: italic; font-weight: 700; font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(255,255,255,0.62); }
+.fitd-cover-niche-label { font-family: var(--font-headline); font-style: italic; font-weight: 700; font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase; color: #8fb6ff; margin-bottom: 14px; }
+.fitd-cover-niche { font-size: 17px; line-height: 1.5; color: rgba(255,255,255,0.82); max-width: 56ch; margin-bottom: 34px; }
+.fitd-cover-offer-label { font-family: var(--font-headline); font-style: italic; font-weight: 700; font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 10px; }
+.fitd-cover-offer { font-family: var(--font-headline); font-weight: 800; font-size: clamp(44px, 7vw, 76px); line-height: 0.98; letter-spacing: -0.03em; margin-bottom: 18px; }
+.fitd-cover-oneliner { font-size: 20px; line-height: 1.45; color: rgba(255,255,255,0.9); max-width: 48ch; margin-bottom: 40px; font-weight: 500; }
+.fitd-belief { position: relative; padding: 4px 0 4px 30px; margin: 0 0 38px; border-left: 3px solid var(--ext-yellow); }
+.fitd-belief .bl-label { font-family: var(--font-headline); font-style: italic; font-weight: 700; font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ext-yellow); margin-bottom: 10px; }
+.fitd-belief .bl-text { font-family: var(--font-headline); font-weight: 700; font-size: clamp(21px, 2.6vw, 27px); line-height: 1.32; letter-spacing: -0.01em; color: #fff; }
+.fitd-hookbar { display: flex; align-items: flex-start; gap: 14px; padding: 20px 22px; border-radius: 18px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(4px); }
+.fitd-hookbar .hb-ic { color: var(--ext-yellow); font-size: 16px; margin-top: 4px; }
+.fitd-hookbar .hk-label { font-family: var(--font-headline); font-style: italic; font-weight: 700; font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 6px; }
+.fitd-hookbar .hk-text { font-family: var(--font-headline); font-weight: 700; font-size: 19px; line-height: 1.35; color: #fff; }
+
+/* Glance strip */
+.fitd-glance { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(255,255,255,0.14); }
+.fitd-glance-cell { padding: 22px 18px 26px 0; border-right: 1px solid rgba(255,255,255,0.1); }
+.fitd-glance-cell:last-child { border-right: none; }
+.fitd-glance-cell .g-label { font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 10px; }
+.fitd-glance-cell .g-val { font-family: var(--font-headline); font-weight: 800; font-size: 20px; line-height: 1.15; letter-spacing: -0.01em; color: #fff; }
+.fitd-glance-cell .g-val.pass { color: #7fe39a; }
+
+/* ---------------- §1 NICHE ---------------- */
+.fitd-nblock { margin-bottom: 46px; }
+.fitd-nlabel { display: flex; align-items: center; gap: 11px; font-family: var(--font-headline); font-weight: 700; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--doc-meta); margin-bottom: 20px; }
+.fitd-nlabel .ic { color: var(--fitd-accent); font-size: 15px; flex: none; }
+.fitd-nlabel::after { content: ""; flex: 1; height: 1px; background: var(--doc-hair-2); }
+.prof-summary { font-family: var(--font-headline); font-weight: 700; font-size: calc(20px * var(--fitd-read-scale)); line-height: 1.45; letter-spacing: -0.01em; color: var(--doc-ink); margin-bottom: 22px; max-width: 52ch; text-wrap: pretty; }
+.prof-attrs { display: flex; flex-wrap: wrap; gap: 10px; }
+.prof-chip { display: inline-flex; align-items: center; gap: 9px; padding: 9px 16px; border-radius: 100px; background: #f4f7fb; border: 1px solid var(--doc-hair-2); font-family: var(--font-headline); font-weight: 600; font-size: 14px; color: var(--doc-ink); }
+.prof-chip .ic { color: var(--fitd-accent); font-size: 14px; }
+.fitd-chipwrap { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 24px; }
+.comm-chip { display: inline-flex; align-items: center; gap: 9px; padding: 9px 15px; border-radius: 11px; background: var(--doc-surface); border: 1px solid var(--doc-hair); font-weight: 600; font-size: 14px; color: var(--doc-ink-2); }
+.comm-chip .ic { font-size: 15px; color: var(--doc-meta); }
+.comm-chip .ic.reddit { color: #FF4500; }
+.comm-chip .ic.youtube { color: #FF0000; }
+.comm-chip .ic.facebook { color: #1877F2; }
+.search-caption { font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--doc-meta); margin-bottom: 11px; }
+.fitd-search-row { display: flex; flex-wrap: wrap; gap: 9px; }
+.search-chip { display: inline-flex; align-items: center; gap: 10px; padding: 9px 16px; border-radius: 100px; background: #eef2f7; font-size: 14px; color: var(--doc-ink-2); font-style: italic; }
+.search-chip .ic { color: var(--doc-meta); font-size: 13px; font-style: normal; }
+.sc-token { color: var(--doc-meta); opacity: 0.7; }
+
+.fitd-alts { border: 1px solid var(--doc-hair); border-radius: 18px; overflow: hidden; }
+.alt-row { display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: center; padding: 18px 20px; border-top: 1px solid var(--doc-hair-2); }
+.alt-row:first-child { border-top: none; }
+.alt-x { width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; background: rgba(241,88,87,0.12); color: var(--ext-red); font-size: 13px; flex: none; }
+.alt-name { font-family: var(--font-headline); font-weight: 700; font-size: 16px; color: var(--doc-ink); margin-bottom: 3px; }
+.alt-problem { font-size: 14px; line-height: 1.5; color: var(--doc-ink-2); }
+.alt-price { font-family: var(--font-headline); font-weight: 700; font-size: 13px; color: var(--flag); background: var(--flag-bg); padding: 6px 14px; border-radius: 100px; white-space: nowrap; }
+
+.fitd-vocab { display: flex; flex-wrap: wrap; gap: 8px; }
+.vocab-chip { font-size: 14px; color: var(--doc-ink-2); background: #f4f7fb; border: 1px solid var(--doc-hair-2); padding: 7px 14px; border-radius: 9px; font-style: italic; }
+.vocab-chip::before { content: "\201C"; color: var(--doc-meta); }
+.vocab-chip::after { content: "\201D"; color: var(--doc-meta); }
+
+.fitd-statband { background: radial-gradient(90% 120% at 100% 0%, rgba(241,88,87,0.18), transparent 55%), linear-gradient(160deg, var(--cover-navy), var(--cover-navy-2)); border-radius: 24px; padding: 32px 34px; color: #fff; }
+.sb-label { font-family: var(--font-headline); font-style: italic; font-weight: 700; font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 24px; }
+.sb-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(108px, 1fr)); gap: 20px 24px; margin-bottom: 26px; }
+.sb-val { font-family: var(--font-headline); font-weight: 800; font-size: 33px; line-height: 1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.sb-stat.em .sb-val { color: #ff8a89; }
+.sb-unit { font-size: 12.5px; color: rgba(255,255,255,0.62); margin-top: 9px; line-height: 1.3; }
+.sb-note { font-size: 14.5px; line-height: 1.6; color: rgba(255,255,255,0.78); max-width: 64ch; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.14); }
+
+/* ---------------- §2 PROBLEM ---------------- */
+.fitd-bigquote { margin: 0 0 38px; }
+.fitd-bigquote .q-mark { font-family: var(--font-headline); font-weight: 800; font-size: 64px; line-height: 0.6; color: var(--fitd-accent); opacity: 0.35; margin-bottom: 6px; display: block; }
+.fitd-bigquote .q-text { font-family: var(--font-headline); font-weight: 700; font-size: clamp(24px, 3.4vw, 34px); line-height: 1.28; letter-spacing: -0.02em; color: var(--doc-ink); }
+.fitd-bigquote .q-attr { margin-top: 16px; font-size: 14px; font-weight: 600; color: var(--doc-meta); letter-spacing: 0.02em; }
+.fitd-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.fitd-fact { padding: 22px; border-radius: 18px; background: #f7f9fc; border: 1px solid var(--doc-hair-2); }
+.fitd-fact .f-num { font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--fitd-accent); margin-bottom: 12px; }
+.fitd-fact .f-label { font-family: var(--font-headline); font-weight: 700; font-size: 15px; color: var(--doc-ink); margin-bottom: 8px; line-height: 1.3; }
+.fitd-fact .f-value { font-size: 14.5px; line-height: 1.6; color: var(--doc-ink-2); }
+
+/* ---------------- §3 NARRATIVE ---------------- */
+.fitd-narr-block { margin-bottom: 40px; }
+.fitd-narr-tag { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-headline); font-style: italic; font-weight: 700; font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--fitd-accent); margin-bottom: 14px; }
+.fitd-narr-tag::before { content: ""; width: 22px; height: 2px; background: var(--fitd-accent); border-radius: 2px; }
+.fitd-narr-lead { font-family: var(--font-headline); font-weight: 700; font-size: 22px; line-height: 1.4; letter-spacing: -0.01em; color: var(--doc-ink); }
+.fitd-narr-body { font-size: calc(18px * var(--fitd-read-scale)); line-height: 1.75; color: var(--doc-ink-2); max-width: 64ch; text-wrap: pretty; }
+.fitd-domino { padding: 26px 28px; border-radius: 20px; background: linear-gradient(179deg, rgba(255,206,67,0.16) 0%, rgba(255,206,67,0.04) 100%); border: 1px solid rgba(255,206,67,0.4); }
+.fitd-domino .dm-text { font-family: var(--font-headline); font-weight: 700; font-size: 20px; line-height: 1.42; color: var(--doc-ink); }
+.fitd-story { position: relative; }
+.fitd-story p { font-size: calc(18px * var(--fitd-read-scale)); line-height: 1.75; color: var(--doc-ink-2); margin-bottom: 20px; max-width: 64ch; text-wrap: pretty; }
+.fitd-story p:first-of-type::first-letter { font-family: var(--font-headline); font-weight: 800; float: left; font-size: 64px; line-height: 0.78; padding: 6px 14px 0 0; color: var(--cover-navy); }
+.fitd-story p.epiphany { font-family: var(--font-headline); font-weight: 700; font-size: 21px; line-height: 1.45; color: var(--doc-ink); border-left: 3px solid var(--ext-green); padding-left: 22px; }
+.fitd-secrets { display: flex; flex-direction: column; gap: 16px; }
+.fitd-secret { display: grid; grid-template-columns: auto 1fr; gap: 22px; padding: 24px; border-radius: 20px; border: 1px solid var(--doc-hair); background: var(--doc-surface); box-shadow: var(--sh-card); }
+.fitd-secret .s-idx { font-family: var(--font-headline); font-weight: 800; font-size: 30px; color: var(--doc-hair); line-height: 1; }
+.fitd-secret .s-type { display: inline-flex; align-items: center; gap: 7px; font-family: var(--font-headline); font-weight: 700; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--fitd-accent-dark); background: var(--fitd-accent-soft); padding: 4px 11px; border-radius: 100px; margin-bottom: 14px; }
+.fitd-secret .s-false { display: flex; gap: 10px; font-size: 15px; line-height: 1.55; color: var(--doc-meta); margin-bottom: 12px; }
+.fitd-secret .s-false .lab { font-weight: 700; color: var(--status-danger); flex: none; }
+.fitd-secret .s-reframe { display: flex; gap: 10px; font-size: 16px; line-height: 1.6; color: var(--doc-ink); }
+.fitd-secret .s-reframe .lab { font-weight: 700; color: var(--pass); flex: none; }
+
+/* ---------------- §4 SCORECARD ---------------- */
+.fitd-verdict { display: flex; align-items: center; gap: 18px; padding: 22px 26px; border-radius: 20px; margin-bottom: 30px; border: 1px solid; }
+.fitd-verdict.pass { background: var(--pass-bg); border-color: rgba(110,191,124,0.5); }
+.fitd-verdict.flag { background: var(--flag-bg); border-color: rgba(255,206,67,0.6); }
+.fitd-verdict .v-icon { width: 46px; height: 46px; border-radius: 13px; display: grid; place-items: center; font-size: 20px; flex: none; color: #fff; }
+.fitd-verdict.pass .v-icon { background: var(--ext-grad-primary); }
+.fitd-verdict.flag .v-icon { background: linear-gradient(106deg, #b8860b, #f0c24a); }
+.fitd-verdict .v-count { font-family: var(--font-headline); font-weight: 800; font-size: 22px; line-height: 1.1; color: var(--doc-ink); }
+.fitd-verdict .v-sub { font-size: 14.5px; color: var(--doc-ink-2); margin-top: 3px; }
+.fitd-pillars { border: 1px solid var(--doc-hair); border-radius: 18px; overflow: hidden; }
+.fitd-pillar { display: grid; grid-template-columns: 38px 1fr auto; gap: 18px; padding: 20px 22px; border-top: 1px solid var(--doc-hair-2); align-items: start; }
+.fitd-pillar:first-child { border-top: none; }
+.fitd-pillar.fail { background: rgba(255,206,67,0.06); }
+.fitd-pillar .p-num { font-family: var(--font-mono); font-size: 12px; font-weight: 600; color: var(--doc-meta); padding-top: 3px; }
+.fitd-pillar .p-name { font-family: var(--font-headline); font-weight: 700; font-size: 16px; line-height: 1.3; color: var(--doc-ink); margin-bottom: 6px; }
+.fitd-pillar .p-detail { font-size: 14px; line-height: 1.6; color: var(--doc-ink-2); }
+.fitd-pillar .p-flag { margin-top: 10px; display: flex; gap: 9px; font-size: 13.5px; line-height: 1.5; color: var(--flag); background: var(--flag-bg); padding: 10px 13px; border-radius: 12px; }
+.fitd-pillar .p-flag .ic { margin-top: 2px; }
+.fitd-badge { display: inline-flex; align-items: center; gap: 7px; font-family: var(--font-headline); font-weight: 700; font-size: 12.5px; letter-spacing: 0.02em; padding: 6px 13px; border-radius: 100px; white-space: nowrap; }
+.fitd-badge.pass { background: var(--pass-bg); color: var(--pass); }
+.fitd-badge.fail { background: var(--flag-bg); color: var(--flag); }
+
+/* ---------------- §5 ASSETS ---------------- */
+.fitd-sub { margin-bottom: 18px; display: flex; align-items: center; gap: 12px; }
+.fitd-sub .sub-letter { font-family: var(--font-mono); font-size: 12px; font-weight: 600; color: var(--fitd-accent); }
+.fitd-sub .sub-title { font-family: var(--font-headline); font-weight: 800; font-size: 21px; letter-spacing: -0.01em; color: var(--doc-ink); }
+.fitd-sub .sub-meta { font-size: 13px; color: var(--doc-meta); margin-left: auto; }
+.fitd-asset-group { margin-bottom: 46px; }
+.fitd-hooks { display: flex; flex-direction: column; gap: 2px; }
+.fitd-hook { display: grid; grid-template-columns: 34px 1fr auto; gap: 16px; padding: 16px 14px; border-radius: 12px; align-items: start; transition: background var(--t-quick); }
+.fitd-hook:hover { background: #f7f9fc; }
+.fitd-hook .h-num { font-family: var(--font-mono); font-size: 12px; color: var(--doc-meta); padding-top: 4px; }
+.fitd-hook .h-body { min-width: 0; }
+.fitd-hook .h-angle { display: inline-block; font-family: var(--font-headline); font-weight: 700; font-size: 10.5px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--fitd-accent-dark); background: var(--fitd-accent-soft); padding: 3px 9px; border-radius: 100px; margin-bottom: 8px; }
+.fitd-hook .h-text { font-size: 16px; line-height: 1.5; color: var(--doc-ink); }
+
+.fitd-copy { display: inline-flex; align-items: center; gap: 7px; flex: none; font-family: var(--font-headline); font-weight: 700; font-size: 12px; padding: 7px 13px; border-radius: 100px; cursor: pointer; border: 1px solid var(--doc-hair); background: var(--doc-surface); color: var(--doc-ink-2); transition: all var(--t-quick) var(--ease-default); opacity: 0; white-space: nowrap; }
+.fitd-hook:hover .fitd-copy, .fitd-copy.show { opacity: 1; }
+.fitd-copy:hover { border-color: var(--fitd-accent); color: var(--fitd-accent-dark); transform: translateY(-1px); }
+.fitd-copy:focus-visible { outline: 2px solid var(--fitd-accent); outline-offset: 2px; opacity: 1; }
+.fitd-copy.copied { background: var(--pass-bg); border-color: transparent; color: var(--pass); }
+
+.fitd-script { position: relative; padding: 28px 30px; border-radius: 20px; background: #0f1b34; color: #e8edf6; background-image: radial-gradient(80% 60% at 100% 0%, rgba(76,139,245,0.18), transparent 60%); }
+.fitd-script .sc-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
+.fitd-script .sc-tag { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-headline); font-style: italic; font-weight: 700; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: #8fb6ff; }
+.fitd-script .sc-body { font-size: calc(18px * var(--fitd-read-scale)); line-height: 1.85; color: #dde5f2; max-width: 62ch; }
+.fitd-script .sc-body .cue { color: #8fb6ff; font-style: italic; }
+.fitd-script .fitd-copy { opacity: 1; background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.16); color: #cdd8ec; }
+.fitd-script .fitd-copy:hover { border-color: #8fb6ff; color: #fff; }
+.fitd-script .fitd-copy.copied { background: rgba(110,191,124,0.25); color: #9be8b1; }
+
+.fitd-lp { display: flex; flex-direction: column; gap: 12px; }
+.fitd-lp-block { display: grid; grid-template-columns: 150px 1fr auto; gap: 22px; padding: 20px 22px; border-radius: 16px; border: 1px solid var(--doc-hair-2); background: #fbfcfe; align-items: start; transition: border-color var(--t-quick); }
+.fitd-lp-block:hover { border-color: var(--doc-hair); }
+.fitd-lp-block .lp-label { font-family: var(--font-headline); font-weight: 700; font-size: 12px; letter-spacing: 0.03em; text-transform: uppercase; color: var(--fitd-accent); padding-top: 2px; }
+.fitd-lp-block .lp-text { font-size: 16px; line-height: 1.6; color: var(--doc-ink); }
+.fitd-lp-block.headline .lp-text { font-family: var(--font-headline); font-weight: 800; font-size: 21px; line-height: 1.25; letter-spacing: -0.01em; }
+.fitd-lp-block .fitd-copy { opacity: 1; }
+
+/* ---------------- BUILD NOTES ---------------- */
+.fitd-notes .nt-head { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+.fitd-notes .nt-head .ic { color: var(--doc-meta); }
+.fitd-notes .nt-title { font-family: var(--font-headline); font-weight: 700; font-size: 14px; letter-spacing: 0.03em; text-transform: uppercase; color: var(--doc-meta); }
+.fitd-notes ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 9px; }
+.fitd-notes li { display: flex; gap: 11px; font-size: 14px; line-height: 1.55; color: var(--doc-meta); }
+.fitd-notes li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--doc-hair); margin-top: 8px; flex: none; }
+.fitd-doc-foot { text-align: center; padding: 28px 0 60px; color: var(--doc-meta); font-size: 12.5px; }
+
+/* ---------------- MOBILE ---------------- */
+.fitd-topbar { display: none; }
+.fitd-sheet-backdrop { display: none; }
+.fitd-sheet { display: none; }
+
+@media (max-width: 1080px) { :root { --rail-w: 260px; --read-max: 680px; } }
+@media (max-width: 920px) {
+  .fitd-app { grid-template-columns: 1fr; }
+  .fitd-rail { display: none; }
+  .fitd-doc { border: none; }
+  .fitd-topbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; position: sticky; top: 0; z-index: 40; padding: 12px 18px; background: rgba(255,255,255,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--doc-hair); }
+  .fitd-topbar-brand { display: flex; align-items: center; gap: 9px; min-width: 0; }
+  .fitd-topbar-brand .mk { width: 24px; height: 24px; flex: none; background: var(--mk) center/contain no-repeat; }
+  .fitd-topbar-brand .wm { font-family: var(--font-headline); font-weight: 800; font-size: 15px; color: var(--cover-navy); }
+  .fitd-topbar .tb-prog { font-family: var(--font-mono); font-size: 11px; color: var(--doc-meta); }
+  .fitd-contents-btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-headline); font-weight: 700; font-size: 13px; padding: 9px 15px; border-radius: 100px; border: 1px solid var(--doc-hair); background: #fff; color: var(--doc-ink); cursor: pointer; }
+  .fitd-read { padding: 0 22px; }
+  .alt-row { grid-template-columns: auto 1fr; }
+  .alt-price { grid-column: 2; justify-self: start; margin-top: 8px; }
+  .fitd-statband { padding: 26px 22px; }
+  .fitd-facts { grid-template-columns: 1fr; }
+  .fitd-glance { grid-template-columns: repeat(2, 1fr); }
+  .fitd-glance-cell:nth-child(2) { border-right: none; }
+  .fitd-glance-cell:nth-child(1), .fitd-glance-cell:nth-child(2) { border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .fitd-secret { grid-template-columns: 1fr; gap: 10px; }
+  .fitd-secret .s-idx { display: none; }
+  .fitd-pillar { grid-template-columns: 1fr auto; }
+  .fitd-pillar .p-num { display: none; }
+  .fitd-lp-block { grid-template-columns: 1fr; gap: 8px; }
+  .fitd-lp-block .fitd-copy { justify-self: start; }
+  .fitd-hook .fitd-copy { opacity: 1; }
+  .fitd-sheet-backdrop.open { display: block; position: fixed; inset: 0; z-index: 50; background: rgba(7,23,58,0.4); backdrop-filter: blur(2px); }
+  .fitd-sheet { display: block; position: fixed; top: 0; left: 0; right: 0; z-index: 60; background: #fff; border-radius: 0 0 24px 24px; padding: 18px 18px 24px; box-shadow: var(--sh-5); transform: translateY(-100%); transition: transform 0.32s var(--ease-out); max-height: 86vh; overflow-y: auto; }
+  .fitd-sheet.open { transform: translateY(0); }
+  .fitd-sheet .sheet-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+  .fitd-sheet .sheet-head .st { font-family: var(--font-headline); font-weight: 800; font-size: 16px; }
+  .fitd-sheet .sheet-head button { background: none; border: none; font-size: 20px; color: var(--doc-meta); cursor: pointer; line-height: 0; }
+}
+@media (max-width: 540px) {
+  .fitd-glance { grid-template-columns: 1fr; }
+  .fitd-glance-cell { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .fitd-read { padding: 0 18px; }
+  .fitd-cover { padding-top: 28px; }
+  .fitd-sec-title { font-size: 27px; }
+  .fitd-script { padding: 22px 18px; }
+  .fitd-story p:first-of-type::first-letter { font-size: 52px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: 0.01ms !important; } }
+</style>
+
+<!-- ============ inline SVG icon library ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3"/></symbol>
+<symbol id="i-dollar" viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 6.5C17 4.6 14.8 4 12 4S7 4.9 7 7.5 9.2 11 12 11s5 1.4 5 3.8S14.8 20 12 20 7 19 7 17"/></symbol>
+<symbol id="i-truck" viewBox="0 0 24 24"><path d="M2 6.5h12v9H2z"/><path d="M14 9.5h4l3 3v3h-7z"/><circle cx="6.5" cy="18" r="1.7"/><circle cx="17.5" cy="18" r="1.7"/></symbol>
+<symbol id="i-tools" viewBox="0 0 24 24"><path d="M14.5 4.5a3.5 3.5 0 0 1 4.9 4.9L8.5 20.8 4 22l1.2-4.5z"/><path d="M12.5 6.5l5 5"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M15.5 21C8.6 21 3 15.4 3 8.5V6a2 2 0 0 1 2-2h2.3a1 1 0 0 1 1 .8l1 4a1 1 0 0 1-.3 1L9 11.5a10 10 0 0 0 3.5 3.5l1.7-1.3a1 1 0 0 1 1-.3l4 1a1 1 0 0 1 .8 1V19a2 2 0 0 1-2 2z"/></symbol>
+<symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8.5" r="3.3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><path d="M16 5.5a3.3 3.3 0 0 1 0 6.4"/><path d="M17.5 13.6a5.5 5.5 0 0 1 3 5.4"/></symbol>
+<symbol id="i-comments" viewBox="0 0 24 24"><path d="M4 5h16v10H10l-4 4v-4H4z"/></symbol>
+<symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9l1.2-4.5h13.6L20 9"/><path d="M5 9.5V20h14V9.5"/><path d="M3.5 9h17"/></symbol>
+<symbol id="i-location" viewBox="0 0 24 24"><path d="M12 21c4.5-4.2 7-7.6 7-11a7 7 0 1 0-14 0c0 3.4 2.5 6.8 7 11z"/><circle cx="12" cy="10" r="2.4"/></symbol>
+<symbol id="i-quote" viewBox="0 0 24 24"><path d="M6 6h5v6H8.2c0 1.8 1 2.9 2.8 3.1V18c-3.1-.3-5-2.4-5-6zM13 6h5v6h-2.8c0 1.8 1 2.9 2.8 3.1V18c-3.1-.3-5-2.4-5-6z"/></symbol>
+<symbol id="i-bullhorn" viewBox="0 0 24 24"><path d="M3 10v4a1 1 0 0 0 1 1h2l1.6 4.6a1 1 0 0 0 .9.6h.6a1 1 0 0 0 1-1.1L10.5 15H12l7 4V5l-7 4H4a1 1 0 0 0-1 1z"/></symbol>
+<symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="9" r="4.5"/><path d="M11.2 12.2L20 21"/><path d="M16.5 16.5l2-2"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.2c0 4.6-3.2 7.9-7.5 9.3-4.3-1.4-7.5-4.7-7.5-9.3V6z"/></symbol>
+<symbol id="i-warning" viewBox="0 0 24 24"><path d="M12 3.2l9.5 17H2.5z"/><path d="M12 10v4.4"/><path d="M12 17.6v.2"/></symbol>
+<symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 3v18"/><path d="M6 4.5h11l-2.2 3L17 10.5H6z"/></symbol>
+<symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M6 11a6 6 0 0 0 12 0"/><path d="M12 17v4"/><path d="M9 21h6"/></symbol>
+<symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4.5" width="14" height="16" rx="2"/><rect x="9" y="2.8" width="6" height="3.8" rx="1"/><path d="M8.5 11h7M8.5 14.5h5"/></symbol>
+<symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="11.5" height="11.5" rx="2"/><path d="M15.5 8.5V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v7.5a2 2 0 0 0 2 2h2.5"/></symbol>
+<symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h12M8 12h12M8 18h12"/><path d="M3.8 6h.2M3.8 12h.2M3.8 18h.2"/></symbol>
+</defs></svg>
+
+<div class="fitd-app">
+
+  <!-- ============ LEFT RAIL (index + scroll-spy) ============ -->
+  <aside class="fitd-rail">
+    <div class="fitd-brand">
+      <span class="mk" role="img" aria-label="Extendly"></span>
+      <span class="wm">Extendly</span>
+    </div>
+    <div class="fitd-rail-kicker">Offer Package</div>
+    <div class="fitd-rail-title">An always-on AI front desk for lawn &amp; landscape companies</div>
+    <nav class="fitd-nav">
+      <a href="#snapshot" class="fitd-nav-item active"><span class="n">00</span><span class="t">Snapshot</span></a>
+      <a href="#niche" class="fitd-nav-item"><span class="n">01</span><span class="t">Niche definition</span></a>
+      <a href="#problem" class="fitd-nav-item"><span class="n">02</span><span class="t">The one problem</span></a>
+      <a href="#narrative" class="fitd-nav-item"><span class="n">03</span><span class="t">Narrative</span></a>
+      <a href="#scorecard" class="fitd-nav-item"><span class="n">04</span><span class="t">7-pillar scorecard</span></a>
+      <a href="#assets" class="fitd-nav-item"><span class="n">05</span><span class="t">Deployable assets</span></a>
+      <a href="#notes" class="fitd-nav-item"><span class="n">06</span><span class="t">Build notes</span></a>
+    </nav>
+    <div class="fitd-rail-foot">
+      <div class="fitd-verdict-chip pass">
+        <div class="dot"><svg class="ic solid"><use href="#i-shield"/></svg></div>
+        <div>
+          <div class="vc-label">Scorecard</div>
+          <div class="vc-val">7 of 7 pillars pass</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="fitd-main">
+    <!-- mobile topbar -->
+    <div class="fitd-topbar">
+      <div class="fitd-topbar-brand">
+        <span class="mk" role="img" aria-label="Extendly"></span>
+        <span class="wm">Extendly</span>
+      </div>
+      <span class="tb-prog">00 / 06</span>
+      <button class="fitd-contents-btn" type="button"><svg class="ic"><use href="#i-list"/></svg> Contents</button>
+    </div>
+    <div class="fitd-sheet-backdrop"></div>
+    <div class="fitd-sheet">
+      <div class="sheet-head"><span class="st">Contents</span><button type="button" class="sheet-close" aria-label="Close"><svg class="ic"><use href="#i-x"/></svg></button></div>
+      <nav class="fitd-nav">
+        <a href="#snapshot" class="fitd-nav-item"><span class="n">00</span><span class="t">Snapshot</span></a>
+        <a href="#niche" class="fitd-nav-item"><span class="n">01</span><span class="t">Niche definition</span></a>
+        <a href="#problem" class="fitd-nav-item"><span class="n">02</span><span class="t">The one problem</span></a>
+        <a href="#narrative" class="fitd-nav-item"><span class="n">03</span><span class="t">Narrative</span></a>
+        <a href="#scorecard" class="fitd-nav-item"><span class="n">04</span><span class="t">7-pillar scorecard</span></a>
+        <a href="#assets" class="fitd-nav-item"><span class="n">05</span><span class="t">Deployable assets</span></a>
+        <a href="#notes" class="fitd-nav-item"><span class="n">06</span><span class="t">Build notes</span></a>
+      </nav>
+    </div>
+
+    <article class="fitd-doc">
+
+      <!-- ============ §0 COVER ============ -->
+      <section id="snapshot" class="fitd-section fitd-cover">
+        <div class="fitd-read">
+          <div class="fitd-cover-top">
+            <div class="fitd-cover-brand"><span class="mk" role="img" aria-label="Extendly"></span><span class="wm">Extendly</span></div>
+            <span class="fitd-cover-tag">Foot-in-the-Door Offer · FITD Builder</span>
+          </div>
+          <div class="fitd-cover-niche-label">Niche</div>
+          <p class="fitd-cover-niche">Full-service residential lawn &amp; landscape companies doing $100k+/mo (mow + maintenance plus design/install)</p>
+          <div class="fitd-cover-offer-label">The offer</div>
+          <h1 class="fitd-cover-offer"><span class="text-grad">Speed-to-Lead</span></h1>
+          <p class="fitd-cover-oneliner">Every estimate call answered in seconds by an AI front desk, no one pulled off the crew.</p>
+          <blockquote class="fitd-belief">
+            <div class="bl-label">The one belief</div>
+            <div class="bl-text">The only way to stop handing five-figure projects to whoever called back first is an always-on front desk that knows the green industry, and you can have one without hiring or learning anything.</div>
+          </blockquote>
+          <div class="fitd-hookbar">
+            <svg class="ic solid hb-ic"><use href="#i-bullhorn"/></svg>
+            <div>
+              <div class="hk-label">Attraction hook</div>
+              <div class="hk-text">How to book every estimate call this spring without pulling a single guy off the crew.</div>
+            </div>
+          </div>
+          <div class="fitd-glance">
+            <div class="fitd-glance-cell"><div class="g-label">Verdict</div><div class="g-val pass">7 of 7 pillars pass</div></div>
+            <div class="fitd-glance-cell"><div class="g-label">Monthly lost</div><div class="g-val">~$21,700</div></div>
+            <div class="fitd-glance-cell"><div class="g-label">Offer price</div><div class="g-val">$100&ndash;$300/mo</div></div>
+            <div class="fitd-glance-cell"><div class="g-label">Deployable assets</div><div class="g-val">8 hooks · VSL · LP</div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ §1 NICHE ============ -->
+      <section id="niche" class="fitd-section">
+        <div class="fitd-read">
+          <header class="fitd-sec-head">
+            <div class="fitd-sec-row"><span class="fitd-sec-num">01</span><span class="fitd-sec-kicker">The ground truth</span><span class="fitd-sec-rule"></span></div>
+            <h2 class="fitd-sec-title">Niche definition</h2>
+            <p class="fitd-sec-lede">Who exactly, where they gather, what they buy today, and what it costs them.</p>
+          </header>
+
+          <div class="fitd-nblock">
+            <div class="fitd-nlabel"><svg class="ic"><use href="#i-briefcase"/></svg>The customer</div>
+            <p class="prof-summary">Full-service residential lawn &amp; landscape operators running recurring maintenance routes alongside high-ticket design and install work.</p>
+            <div class="prof-attrs">
+              <span class="prof-chip"><svg class="ic"><use href="#i-dollar"/></svg>$100k+/mo revenue</span>
+              <span class="prof-chip"><svg class="ic"><use href="#i-truck"/></svg>3 or more crews</span>
+              <span class="prof-chip"><svg class="ic"><use href="#i-tools"/></svg>Patios, irrigation, plantings, hardscape</span>
+              <span class="prof-chip"><svg class="ic"><use href="#i-user"/></svg>Maybe one office person</span>
+              <span class="prof-chip"><svg class="ic"><use href="#i-phone"/></svg>Owner still runs estimates</span>
+            </div>
+          </div>
+
+          <div class="fitd-nblock">
+            <div class="fitd-nlabel"><svg class="ic"><use href="#i-location"/></svg>Where they gather</div>
+            <div class="fitd-chipwrap">
+              <span class="comm-chip"><svg class="ic"><use href="#i-users"/></svg>NALP</span>
+              <span class="comm-chip"><svg class="ic"><use href="#i-comments"/></svg>LawnSite</span>
+              <span class="comm-chip"><svg class="ic"><use href="#i-comments"/></svg>GreenIndustryForum</span>
+              <span class="comm-chip"><svg class="ic reddit"><use href="#i-comments"/></svg>r/lawncare</span>
+              <span class="comm-chip"><svg class="ic reddit"><use href="#i-comments"/></svg>r/landscaping</span>
+              <span class="comm-chip"><svg class="ic youtube"><use href="#i-comments"/></svg>Lawn Care Millionaire</span>
+              <span class="comm-chip"><svg class="ic youtube"><use href="#i-comments"/></svg>Brian&rsquo;s Lawn Maintenance</span>
+              <span class="comm-chip"><svg class="ic facebook"><use href="#i-users"/></svg>Lawn Care Business Owners</span>
+              <span class="comm-chip"><svg class="ic"><use href="#i-store"/></svg>Equipment-dealer counters</span>
+            </div>
+            <div class="search-caption">They search</div>
+            <div class="fitd-search-row">
+              <span class="search-chip"><svg class="ic"><use href="#i-search"/></svg>landscape estimate near me</span>
+              <span class="search-chip"><svg class="ic"><use href="#i-search"/></svg>patio installer <span class="sc-token">[city]</span></span>
+              <span class="search-chip"><svg class="ic"><use href="#i-search"/></svg>lawn service quote</span>
+            </div>
+          </div>
+
+          <div class="fitd-nblock">
+            <div class="fitd-nlabel"><svg class="ic"><use href="#i-x"/></svg>What they use today, and why it falls short</div>
+            <div class="fitd-alts">
+              <div class="alt-row"><div class="alt-x"><svg class="ic"><use href="#i-x"/></svg></div><div class="alt-main"><div class="alt-name">Voicemail &amp; &ldquo;call them back tonight&rdquo;</div><div class="alt-problem">The lead already hired whoever picked up.</div></div><span class="alt-price">Free</span></div>
+              <div class="alt-row"><div class="alt-x"><svg class="ic"><use href="#i-x"/></svg></div><div class="alt-main"><div class="alt-name">A spouse or one office person</div><div class="alt-problem">Fine until spring volume hits, and off at 5pm.</div></div><span class="alt-price">In-house</span></div>
+              <div class="alt-row"><div class="alt-x"><svg class="ic"><use href="#i-x"/></svg></div><div class="alt-main"><div class="alt-name">Traditional answering service</div><div class="alt-problem">Generic script that can&rsquo;t tell a $200 mow from a $30k install.</div></div><span class="alt-price">$200&ndash;$500/mo</span></div>
+              <div class="alt-row"><div class="alt-x"><svg class="ic"><use href="#i-x"/></svg></div><div class="alt-main"><div class="alt-name">Cheap AI receptionist</div><div class="alt-problem">Picks up, but never runs the business&rsquo;s own logic.</div></div><span class="alt-price">$29&ndash;$99/mo</span></div>
+            </div>
+          </div>
+
+          <div class="fitd-nblock">
+            <div class="fitd-nlabel"><svg class="ic solid"><use href="#i-quote"/></svg>How they talk about it</div>
+            <div class="fitd-vocab">
+              <span class="vocab-chip">losing jobs to missed calls</span>
+              <span class="vocab-chip">whoever calls back first wins</span>
+              <span class="vocab-chip">out on a job</span>
+              <span class="vocab-chip">in the field</span>
+              <span class="vocab-chip">spring rush</span>
+              <span class="vocab-chip">slammed in spring</span>
+              <span class="vocab-chip">book the estimate</span>
+              <span class="vocab-chip">design consult</span>
+              <span class="vocab-chip">walkthrough / bid</span>
+              <span class="vocab-chip">maintenance accounts</span>
+              <span class="vocab-chip">install jobs</span>
+              <span class="vocab-chip">off-season cash flow</span>
+            </div>
+          </div>
+
+          <div class="fitd-statband">
+            <div class="sb-label">Dollars at stake</div>
+            <div class="sb-stats">
+              <div class="sb-stat"><div class="sb-val">42</div><div class="sb-unit">inbound calls / mo</div></div>
+              <div class="sb-stat"><div class="sb-val">74%</div><div class="sb-unit">go unanswered</div></div>
+              <div class="sb-stat"><div class="sb-val">31</div><div class="sb-unit">missed every month</div></div>
+              <div class="sb-stat em"><div class="sb-val">$21.7k</div><div class="sb-unit">lost per month</div></div>
+              <div class="sb-stat"><div class="sb-val">$3,500</div><div class="sb-unit">average job</div></div>
+            </div>
+            <p class="sb-note">One missed design or install consult is worth thousands by itself. They already pay $200&ndash;$500/mo for a receptionist, or $3,000&ndash;$4,000/mo for an in-house hire, chasing the very same outcome.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ §2 PROBLEM ============ -->
+      <section id="problem" class="fitd-section">
+        <div class="fitd-read">
+          <header class="fitd-sec-head">
+            <div class="fitd-sec-row"><span class="fitd-sec-num">02</span><span class="fitd-sec-kicker">The wedge</span><span class="fitd-sec-rule"></span></div>
+            <h2 class="fitd-sec-title">The one problem</h2>
+          </header>
+          <blockquote class="fitd-bigquote">
+            <span class="q-mark" aria-hidden="true">&ldquo;</span>
+            <p class="q-text">When an estimate call comes in and my crew is out in the field, my customer loses that project to whoever called back first.</p>
+            <div class="q-attr">In the customer&rsquo;s own words</div>
+          </blockquote>
+          <div class="fitd-facts">
+            <div class="fitd-fact"><div class="f-num">01</div><div class="f-label">Why it&rsquo;s close to the money</div><div class="f-value">Every unanswered estimate call is a booked job that went to a competitor. At this tier the lost call is often a $5,000&ndash;$50,000 design/install, not a mow.</div></div>
+            <div class="fitd-fact"><div class="f-num">02</div><div class="f-label">Verifiable</div><div class="f-value">Shops already pay $200&ndash;$500/mo for answering services and $3,000+/mo for an office hire specifically to stop losing leads to voicemail.</div></div>
+            <div class="fitd-fact"><div class="f-num">03</div><div class="f-label">Price-fit check</div><div class="f-value">The wedge sits under every alternative they already buy, so $100&ndash;$300/mo is an easy yes.</div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ §3 NARRATIVE ============ -->
+      <section id="narrative" class="fitd-section">
+        <div class="fitd-read">
+          <header class="fitd-sec-head">
+            <div class="fitd-sec-row"><span class="fitd-sec-num">03</span><span class="fitd-sec-kicker">The persuasion engine</span><span class="fitd-sec-rule"></span></div>
+            <h2 class="fitd-sec-title">The narrative</h2>
+            <p class="fitd-sec-lede">The reading-heavy section: a new opportunity, the belief that makes every objection irrelevant, the customer story, and the three reframes.</p>
+          </header>
+
+          <div class="fitd-narr-block">
+            <div class="fitd-narr-tag">New opportunity</div>
+            <p class="fitd-narr-lead">I help full-service lawn and landscape companies answer every estimate call the second it rings, without pulling a guy off the crew or hiring a front desk.</p>
+          </div>
+          <div class="fitd-narr-block">
+            <div class="fitd-narr-tag">The new vehicle</div>
+            <p class="fitd-narr-body">An always-on AI front desk built for the green industry. Your best estimator&rsquo;s brain, on every call, 24/7, that already knows a weekly mow from a $30k paver patio, qualifies the job, captures address and scope, and books the estimate.</p>
+          </div>
+          <div class="fitd-narr-block">
+            <div class="fitd-narr-tag">The big domino</div>
+            <div class="fitd-domino"><p class="dm-text">If an owner believes an always-on AI front desk built for the green industry is the one thing that stops five-figure projects from going to whoever called back first, every other objection becomes irrelevant.</p></div>
+          </div>
+          <div class="fitd-narr-block">
+            <div class="fitd-narr-tag">The story · epiphany bridge</div>
+            <div class="fitd-story">
+              <p>Marcus built his company from a single mower to three crews and ~$150k/mo. Mow accounts paid the bills, but the real money was design and install worth twenty, thirty, fifty thousand each.</p>
+              <p>Every spring he felt sick, knowing the phone rang while he stood in a backyard with a tape measure. His wife caught calls between school runs; he called people back at 8pm from the truck.</p>
+              <p>Then one Tuesday in April a homeowner told him, on the walkthrough, &ldquo;You were the third company I called. The first one answered, so I already signed. Yours was the bid I actually wanted.&rdquo; That patio was a $34,000 job.</p>
+              <p>He realized voicemail was not a small leak, it was the wall. His equipment dealer mentioned an AI front desk another shop was running. He assumed a robot would butcher his calls, until he heard it tag a caller as a design lead, pull the address, ask his two questions, and book the estimate before the homeowner could dial the next company.</p>
+              <p class="epiphany">The epiphany: the problem was never his prices or his work, it was answer speed, and answer speed was the one thing he could fix without hiring a soul.</p>
+              <p>He flipped it on mid-spring-rush; his calendar filled with named, qualified estimates he&rsquo;d have lost to voicemail. He booked more install jobs than any spring before, without adding an hour to his day.</p>
+            </div>
+          </div>
+          <div class="fitd-narr-block" style="margin-bottom:0">
+            <div class="fitd-narr-tag">The 3 secrets · objection &rarr; reframe</div>
+            <div class="fitd-secrets">
+              <div class="fitd-secret"><div class="s-idx">1</div><div><span class="s-type"><svg class="ic" style="font-size:11px"><use href="#i-key"/></svg>Vehicle</span><div class="s-false"><span class="lab">False belief</span><span>AI can&rsquo;t handle my calls, every job is a custom quote.</span></div><div class="s-reframe"><span class="lab">Reframe</span><span>It&rsquo;s configured off your own services, so it routes design/install differently than maintenance. It doesn&rsquo;t quote, it qualifies and books, so you walk into a warm, pre-scoped estimate.</span></div></div></div>
+              <div class="fitd-secret"><div class="s-idx">2</div><div><span class="s-type"><svg class="ic" style="font-size:11px"><use href="#i-key"/></svg>Internal</span><div class="s-false"><span class="lab">False belief</span><span>I&rsquo;m not a tech guy and I&rsquo;m buried in spring.</span></div><div class="s-reframe"><span class="lab">Reframe</span><span>Go live in 72 hours without touching a setting. You answer a five-minute intake; we configure, deploy, and test it. Your only job is to watch it work.</span></div></div></div>
+              <div class="fitd-secret"><div class="s-idx">3</div><div><span class="s-type"><svg class="ic" style="font-size:11px"><use href="#i-key"/></svg>External</span><div class="s-false"><span class="lab">False belief</span><span>I already have an office person and money&rsquo;s tight off-season.</span></div><div class="s-reframe"><span class="lab">Reframe</span><span>Your office person goes home at five and is one human during the rush. This never sleeps, for less than a day of their pay. One saved install job pays for years.</span></div></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ §4 SCORECARD ============ -->
+      <section id="scorecard" class="fitd-section">
+        <div class="fitd-read">
+          <header class="fitd-sec-head">
+            <div class="fitd-sec-row"><span class="fitd-sec-num">04</span><span class="fitd-sec-kicker">Validation centerpiece</span><span class="fitd-sec-rule"></span></div>
+            <h2 class="fitd-sec-title">The 7-pillar scorecard</h2>
+            <p class="fitd-sec-lede">Each pillar of the foot-in-the-door framework, how it is fulfilled for this niche, and whether it passes.</p>
+          </header>
+          <div class="fitd-verdict pass">
+            <div class="v-icon"><svg class="ic solid"><use href="#i-shield"/></svg></div>
+            <div><div class="v-count">7 of 7 pillars pass</div><div class="v-sub">All seven pillars pass. No constraint bent.</div></div>
+          </div>
+          <div class="fitd-pillars">
+            <div class="fitd-pillar"><div class="p-num">01</div><div><div class="p-name">One close-to-money problem</div><div class="p-detail">&ldquo;When an estimate call comes in and my crew is in the field, my customer loses that project to whoever called back first.&rdquo; Anchored against $200&ndash;$500/mo services, priced at $100&ndash;$300/mo.</div></div><span class="fitd-badge pass"><svg class="ic"><use href="#i-check"/></svg>Pass</span></div>
+            <div class="fitd-pillar"><div class="p-num">02</div><div><div class="p-name">Lead magnet (+ call hook)</div><div class="p-detail">Prospect calls the AI, which acts as the front desk for THEIR company live: greets as their business, qualifies mow vs design/install, offers to book. Call hook: &ldquo;Your front desk just caught a design lead and booked an estimate while you were standing here.&rdquo;</div></div><span class="fitd-badge pass"><svg class="ic"><use href="#i-check"/></svg>Pass</span></div>
+            <div class="fitd-pillar"><div class="p-num">03</div><div><div class="p-name">&lt;5 min intake</div><div class="p-detail">Lead channels (calls, web form, GMB, Facebook, SMS); service lines; the ONE call outcome (book or transfer); owner cell if transfer; 3&ndash;4 qualifying questions they already ask. Under 5 minutes.</div></div><span class="fitd-badge pass"><svg class="ic"><use href="#i-check"/></svg>Pass</span></div>
+            <div class="fitd-pillar"><div class="p-num">04</div><div><div class="p-name">15-min training block</div><div class="p-detail">The HighLevel Voice AI / Conversation AI surface plus the Universal Inbox, so the owner recognizes where the test call and booked estimate land.</div></div><span class="fitd-badge pass"><svg class="ic"><use href="#i-check"/></svg>Pass</span></div>
+            <div class="fitd-pillar"><div class="p-num">05</div><div><div class="p-name">&lt;3 human-hours implementation</div><div class="p-detail">Deploy snapshot (~20 min), map intake into the voice/conversation AI config (~30 min), place widget + link inbox (~25 min), sanity-check a test call (~15 min). ~1.5 hours.</div></div><span class="fitd-badge pass"><svg class="ic"><use href="#i-check"/></svg>Pass</span></div>
+            <div class="fitd-pillar"><div class="p-num">06</div><div><div class="p-name">15-min test &amp; launch</div><div class="p-detail">Trigger a live test call as a &ldquo;design lead,&rdquo; owner watches it qualify and book; then point GMB, website, and main line at the number.</div></div><span class="fitd-badge pass"><svg class="ic"><use href="#i-check"/></svg>Pass</span></div>
+            <div class="fitd-pillar"><div class="p-num">07</div><div><div class="p-name">Ascension hook</div><div class="p-detail">Next gap: are booked estimates showing up and closing? Ascension is appointment confirmation / no-show nurture / estimate follow-up.</div></div><span class="fitd-badge pass"><svg class="ic"><use href="#i-check"/></svg>Pass</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ §5 ASSETS ============ -->
+      <section id="assets" class="fitd-section">
+        <div class="fitd-read">
+          <header class="fitd-sec-head">
+            <div class="fitd-sec-row"><span class="fitd-sec-num">05</span><span class="fitd-sec-kicker">Ready to ship</span><span class="fitd-sec-rule"></span></div>
+            <h2 class="fitd-sec-title">Deployable assets</h2>
+            <p class="fitd-sec-lede">The copy a partner puts to work the same day: ad hooks, a read-aloud VSL, and a full set of landing-page blocks.</p>
+          </header>
+
+          <div class="fitd-asset-group">
+            <div class="fitd-sub"><span class="sub-letter">5a</span><span class="sub-title">Ad hooks</span><span class="sub-meta">8 lines · angle tagged</span></div>
+            <div class="fitd-hooks">
+              <div class="fitd-hook"><div class="h-num">01</div><div class="h-body"><span class="h-angle">Little-known</span><div class="h-text">There&rsquo;s a quiet reason the shop down the road keeps landing the big patio jobs: they answer the phone before you can call back.</div></div><button class="fitd-copy" type="button"><svg class="ic"><use href="#i-copy"/></svg><span class="lbl">Copy</span></button></div>
+              <div class="fitd-hook"><div class="h-num">02</div><div class="h-body"><span class="h-angle">Crystal ball</span><div class="h-text">Voicemail is costing you install jobs this spring. Here is the front desk the busiest lawn and landscape companies are switching to.</div></div><button class="fitd-copy" type="button"><svg class="ic"><use href="#i-copy"/></svg><span class="lbl">Copy</span></button></div>
+              <div class="fitd-hook"><div class="h-num">03</div><div class="h-body"><span class="h-angle">Well known, little understood</span><div class="h-text">Every owner knows &ldquo;whoever calls back first wins.&rdquo; Almost none have done the one thing that makes you the one who answers first, every time.</div></div><button class="fitd-copy" type="button"><svg class="ic"><use href="#i-copy"/></svg><span class="lbl">Copy</span></button></div>
+              <div class="fitd-hook"><div class="h-num">04</div><div class="h-body"><span class="h-angle">Back to fundamentals</span><div class="h-text">You do not need more leads this spring. You need to stop losing the ones already calling while you are on a mower.</div></div><button class="fitd-copy" type="button"><svg class="ic"><use href="#i-copy"/></svg><span class="lbl">Copy</span></button></div>
+              <div class="fitd-hook"><div class="h-num">05</div><div class="h-body"><span class="h-angle">This changes everything</span><div class="h-text">What if every estimate call got answered, qualified, and booked, even when all three crews are in the field?</div></div><button class="fitd-copy" type="button"><svg class="ic"><use href="#i-copy"/></svg><span class="lbl">Copy</span></button></div>
+              <div class="fitd-hook"><div class="h-num">06</div><div class="h-body"><span class="h-angle">Fear</span><div class="h-text">78% of homeowners hire whoever answers first. If your phone goes to voicemail, you are not in the running.</div></div><button class="fitd-copy" type="button"><svg class="ic"><use href="#i-copy"/></svg><span class="lbl">Copy</span></button></div>
+              <div class="fitd-hook"><div class="h-num">07</div><div class="h-body"><span class="h-angle">Little-known</span><div class="h-text">An AI front desk built for the green industry that tells a $200 mow from a $30k paver job, and books the estimate while you keep working.</div></div><button class="fitd-copy" type="button"><svg class="ic"><use href="#i-copy"/></svg><span class="lbl">Copy</span></button></div>
+              <div class="fitd-hook"><div class="h-num">08</div><div class="h-body"><span class="h-angle">Status</span><div class="h-text">Stop calling leads back at 8pm from the truck. Let the jobs book themselves while you sleep.</div></div><button class="fitd-copy" type="button"><svg class="ic"><use href="#i-copy"/></svg><span class="lbl">Copy</span></button></div>
+            </div>
+          </div>
+
+          <div class="fitd-asset-group">
+            <div class="fitd-sub"><span class="sub-letter">5b</span><span class="sub-title">VSL script</span><span class="sub-meta">read aloud</span></div>
+            <div class="fitd-script">
+              <div class="sc-top"><span class="sc-tag"><svg class="ic"><use href="#i-mic"/></svg>Voice / sales letter</span><button class="fitd-copy" type="button"><svg class="ic"><use href="#i-copy"/></svg><span class="lbl">Copy script</span></button></div>
+              <p class="sc-body">Let me ask you something. How many estimate calls hit your voicemail last spring while you were standing in someone&rsquo;s backyard with a tape measure? Because here is what almost no lawn and landscape owner wants to admit. 78% of homeowners hire whoever answers first. Not the best price. Not the best work. Whoever picks up. <span class="cue">[continues through Marcus&rsquo;s story, the epiphany, the 3 objection knock-downs, and a close: &ldquo;You do not have to choose between being on the job and catching the phone. Not anymore. Book a quick call and I will show you exactly what your voicemail has been costing you.&rdquo;]</span></p>
+            </div>
+          </div>
+
+          <div class="fitd-asset-group" style="margin-bottom:0">
+            <div class="fitd-sub"><span class="sub-letter">5c</span><span class="sub-title">Landing-page copy</span><span class="sub-meta">6 blocks</span></div>
+            <div class="fitd-lp">
+              <div class="fitd-lp-block headline"><div class="lp-label">Headline</div><div class="lp-text">Book Every Estimate Call This Spring Without Pulling a Single Guy Off the Crew.</div><button class="fitd-copy" type="button"><svg class="ic"><use href="#i-copy"/></svg><span class="lbl">Copy</span></button></div>
+              <div class="fitd-lp-block"><div class="lp-label">Subhead</div><div class="lp-text">An always-on AI front desk built for lawn and landscape companies. It answers every call in seconds, knows a mow from a $30k install, and books the estimate, even when all your crews are in the field.</div><button class="fitd-copy" type="button"><svg class="ic"><use href="#i-copy"/></svg><span class="lbl">Copy</span></button></div>
+              <div class="fitd-lp-block"><div class="lp-label">Problem / agitate</div><div class="lp-text">Every time the phone rings and your crews are out, that call rolls to voicemail. 78% of homeowners hire whoever answers first. The five-figure design and install jobs are quietly going to whoever picked up before you could call back at 8pm. That&rsquo;s not a price problem or a work problem. It&rsquo;s an answer-speed problem.</div><button class="fitd-copy" type="button"><svg class="ic"><use href="#i-copy"/></svg><span class="lbl">Copy</span></button></div>
+              <div class="fitd-lp-block"><div class="lp-label">The new opportunity</div><div class="lp-text">Not a cheaper answering service. A front desk that thinks like your best office manager, built off your own services, answering every call 24/7, qualifying mow vs design vs install, and booking the estimate straight to your calendar.</div><button class="fitd-copy" type="button"><svg class="ic"><use href="#i-copy"/></svg><span class="lbl">Copy</span></button></div>
+              <div class="fitd-lp-block"><div class="lp-label">The offer</div><div class="lp-text">Your own AI front desk, live in 72 hours, answering and booking every estimate call for $100 to $300/mo. Less than the answering service you&rsquo;d otherwise hire, and a single saved install job pays for years.</div><button class="fitd-copy" type="button"><svg class="ic"><use href="#i-copy"/></svg><span class="lbl">Copy</span></button></div>
+              <div class="fitd-lp-block"><div class="lp-label">CTA</div><div class="lp-text">Book your 15-minute setup call and watch your new front desk catch a live test lead before you hang up.</div><button class="fitd-copy" type="button"><svg class="ic"><use href="#i-copy"/></svg><span class="lbl">Copy</span></button></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ BUILD NOTES ============ -->
+      <section id="notes" class="fitd-section">
+        <div class="fitd-read">
+          <div class="fitd-notes">
+            <div class="nt-head"><svg class="ic"><use href="#i-clipboard"/></svg><span class="nt-title">Build notes</span></div>
+            <ul>
+              <li>Menu source: live, confirmed current.</li>
+              <li>Dollars-at-stake figures are general home-services benchmarks; validate a lawn-specific stat before paid spend.</li>
+              <li>No compliance flags.</li>
+              <li>No em dashes. All 7 pillars pass.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <div class="fitd-doc-foot">End of package · Foot-in-the-Door Offer generated by FITD Builder</div>
+    </article>
+  </main>
+</div>
+
+<script>
+(function () {
+  var navItems = [].slice.call(document.querySelectorAll('.fitd-nav-item'));
+  var sections = [].slice.call(document.querySelectorAll('.fitd-section'));
+  var tbProg = document.querySelector('.tb-prog');
+  var sheet = document.querySelector('.fitd-sheet');
+  var backdrop = document.querySelector('.fitd-sheet-backdrop');
+  var openBtn = document.querySelector('.fitd-contents-btn');
+  var closeBtn = document.querySelector('.fitd-sheet .sheet-close');
+  var total = sections.length ? sections.length - 1 : 0;
+
+  function closeSheet() { if (sheet) sheet.classList.remove('open'); if (backdrop) backdrop.classList.remove('open'); }
+  function openSheet() { if (sheet) sheet.classList.add('open'); if (backdrop) backdrop.classList.add('open'); }
+
+  navItems.forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var id = a.getAttribute('href').slice(1);
+      var el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      closeSheet();
+    });
+  });
+
+  function setActive(id, idx) {
+    navItems.forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + id); });
+    if (tbProg) tbProg.textContent = String(idx).padStart(2, '0') + ' / ' + String(total).padStart(2, '0');
+  }
+  function spy() {
+    // bottom of page: force the last section active (its top may never cross the threshold)
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+      var last = sections[sections.length - 1];
+      if (last) setActive(last.id, sections.length - 1);
+      return;
+    }
+    var best = null, bestIdx = 0, bestTop = -Infinity;
+    sections.forEach(function (s, i) {
+      var top = s.getBoundingClientRect().top;
+      if (top <= 140 && top > bestTop) { bestTop = top; best = s.id; bestIdx = i; }
+    });
+    if (best) setActive(best, bestIdx);
+  }
+  window.addEventListener('scroll', spy, { passive: true });
+  window.addEventListener('resize', spy, { passive: true });
+  spy();
+
+  if (openBtn) openBtn.addEventListener('click', openSheet);
+  if (closeBtn) closeBtn.addEventListener('click', closeSheet);
+  if (backdrop) backdrop.addEventListener('click', closeSheet);
+
+  // Copy buttons read the visible asset next to them, so there is a SINGLE
+  // source of truth: edit the shown copy and the button follows automatically.
+  function copyTextFor(btn) {
+    var hook = btn.closest('.fitd-hook');
+    if (hook) { var h = hook.querySelector('.h-text'); return h ? h.textContent.trim() : ''; }
+    var script = btn.closest('.fitd-script');
+    if (script) { var body = script.querySelector('.sc-body'); return body ? body.textContent.replace(/\s+/g, ' ').trim() : ''; }
+    var lp = btn.closest('.fitd-lp-block');
+    if (lp) { var t = lp.querySelector('.lp-text'); return t ? t.textContent.trim() : ''; }
+    return '';
+  }
+  document.querySelectorAll('.fitd-copy').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var txt = copyTextFor(btn);
+      var lbl = btn.querySelector('.lbl');
+      var original = lbl ? lbl.textContent : '';
+      function flash(ok) {
+        btn.classList.add('copied');
+        if (lbl) lbl.textContent = ok === false ? 'Press Ctrl+C' : 'Copied';
+        setTimeout(function () { btn.classList.remove('copied'); if (lbl) lbl.textContent = original; }, 1600);
+      }
+      function fallback() {
+        var ta = document.createElement('textarea');
+        ta.value = txt; ta.setAttribute('readonly', '');
+        ta.style.position = 'absolute'; ta.style.left = '-9999px';
+        document.body.appendChild(ta); ta.select();
+        var ok = false; try { ok = document.execCommand('copy'); } catch (_) {}
+        document.body.removeChild(ta); flash(ok);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(txt).then(function () { flash(true); }, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>

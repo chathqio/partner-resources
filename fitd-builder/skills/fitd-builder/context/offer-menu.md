@@ -43,12 +43,14 @@ update this one line; nothing else in the skill hardcodes it.
 
 ## Output path
 
-All outputs are markdown, named in kebab-case, written to a cwd-relative folder (create
-it if missing). Always confirm the resolved path with the user before writing.
+Files are named in kebab-case and written to a cwd-relative folder (create it if
+missing). Always confirm the resolved path with the user before writing.
 
-- **contextualize** -> `./niche-offers/<niche>.md` (the niche go-to-market package).
-  Extendly-internal: point runs at `partner/offeriq/niche_contex/<niche>.md`.
-- **build** -> `./offer-drafts/<offer-slug>.md` (the from-scratch offer submission packet
-  for Extendly).
+- **contextualize** -> `./niche-offers/<niche>.md` (the markdown niche package, the
+  source of truth) **plus a visual HTML artifact of the same package**: a native
+  Artifact when available, otherwise a `./niche-offers/<niche>.html` file next to the
+  markdown. Extendly-internal: point runs at `partner/offeriq/niche_contex/<niche>.md`.
+- **build** -> `./offer-drafts/<offer-slug>.md` (the from-scratch offer submission
+  packet for Extendly; markdown only).
 
 These defaults keep the skill identical in every install.

@@ -1,10 +1,10 @@
 ---
 name: fitd-builder
 type: standalone
-version: 0.2.0
+version: 0.3.0
 category: content
-description: Builds foot-in-the-door offers two ways. contextualize - adapt an existing Extendly menu offer to a specific niche (Expert Secrets hook + story + hydrated OfferIQ 7 pillars + ad/VSL/landing copy). build - construct a brand-new offer from scratch against the OfferIQ 7-pillar standard as a markdown submission packet for Extendly. Outputs are markdown only.
-allowed-tools: [Read, Write, Glob, Grep, Edit, AskUserQuestion, WebSearch, WebFetch]
+description: Builds foot-in-the-door offers two ways. contextualize - adapt an existing Extendly menu offer to a specific niche (Expert Secrets hook + story + hydrated OfferIQ 7 pillars + ad/VSL/landing copy), delivered as a markdown package plus a visual, self-contained HTML artifact. build - construct a brand-new offer from scratch against the OfferIQ 7-pillar standard as a markdown submission packet for Extendly.
+allowed-tools: [Read, Write, Glob, Grep, Edit, AskUserQuestion, WebSearch, WebFetch, Artifact]
 ---
 
 <activation>
@@ -16,6 +16,8 @@ Builds foot-in-the-door (FITD) offers for Extendly agency partners, two ways:
   package: niche definition → the one specific problem → an Expert Secrets narrative (new
   opportunity, big domino, epiphany-bridge story, 3 secrets) → all 7 OfferIQ pillars
   retuned for the niche → deployable assets (ad hook lines, VSL/story script, landing copy).
+  It then renders that package as a **visual, self-contained HTML artifact** (a native
+  Artifact, or a `.html` file when Artifact is unavailable).
 - **build** - construct a **brand-new offer from scratch** against the OfferIQ 7-pillar
   standard when no menu offer fits. Produces a niche-agnostic markdown offer-definition /
   submission packet the partner sends to Extendly for review (no narrative, no copy, no YAML).
@@ -70,7 +72,7 @@ person with a specific problem.
 <commands>
 | Command | Description | Routes To |
 |---------|-------------|-----------|
-| `/fitd-builder contextualize` | Adapt an existing menu offer to a niche: resolve menu → research → problem → narrative → 7 pillars → assets, written to one package file | tasks/contextualize-offer.md |
+| `/fitd-builder contextualize` | Adapt an existing menu offer to a niche: resolve menu → research → problem → narrative → 7 pillars → assets → one markdown package + a visual HTML artifact | tasks/contextualize-offer.md |
 | `/fitd-builder build` | Construct a new offer from scratch against the OfferIQ 7-pillar standard → markdown submission packet for Extendly | tasks/build-offer.md |
 | `/fitd-builder research` | Just the niche-research stage (pains, vocabulary, vehicle, dollars at stake, objections), anchored to a chosen offer | tasks/research-niche.md |
 </commands>
@@ -87,7 +89,9 @@ person with a specific problem.
 ## Load on Demand
 @frameworks/offeriq-pillars.md (both commands: the 7-pillar standard to hydrate or construct against)
 @frameworks/narrative-engine.md (contextualize only: the hook + story - new opportunity, big domino, epiphany bridge, 3 secrets)
+@frameworks/artifact-rendering.md (contextualize stage 6: render the package as a self-contained HTML artifact, CSP rules + publish/fallback)
 @templates/niche-offer-package.md (contextualize: the hydrated niche package)
+@templates/offer-package-artifact.html (contextualize stage 6: the self-contained HTML template to fill and publish)
 @templates/offer-definition.md (build: the from-scratch offer submission packet)
 @checklists/offer-quality.md (contextualize: gate the niche package before delivery)
 @checklists/offer-mechanics.md (build: gate the offer mechanics before submission)
@@ -97,8 +101,9 @@ person with a specific problem.
 fitd-builder loaded - foot-in-the-door offer builder.
 
 - **contextualize** - adapt an existing menu offer to a niche: hook + story + 7 hydrated
-  pillars + ad/VSL/landing copy. Give me a **niche** and which **offer** off the menu
-  (or say "list" to see the live menu). Example: "single-location med spas + Speed-to-Lead".
+  pillars + ad/VSL/landing copy, delivered as a markdown package **and a visual HTML
+  artifact**. Give me a **niche** and which **offer** off the menu (or say "list" to see
+  the live menu). Example: "single-location med spas + Speed-to-Lead".
 - **build** - construct a new offer from scratch against the OfferIQ 7-pillar standard
   (a submission packet for Extendly). Tell me what you can deliver and who it's for.
 - **research** - just the niche dig (pains, vocabulary, vehicle, dollars, objections).

@@ -39,4 +39,11 @@ Build notes.
 
 ## House style
 - [ ] No em dashes anywhere in the package
-- [ ] Output written to the confirmed path, named `{niche-slug}.md`
+- [ ] Markdown output written to the confirmed path, named `{niche-slug}.md`
+
+## Visual artifact (stage 6)
+- [ ] Rendered from `templates/offer-package-artifact.html`; `<style>`, icon `<defs>`, and `<script>` left untouched
+- [ ] CSP-clean: no external hosts (no CDN script, webfont, remote image, or fetch)
+- [ ] Content matches the approved package (same hook + story), in the niche's vocabulary, no em dashes
+- [ ] Scorecard visual matches the real pass/fail (failing pillars use the flag variant)
+- [ ] Delivered as a native Artifact, or as the wrapped `{niche-slug}.html` fallback file

@@ -1,7 +1,7 @@
 {
   "name": "fitd-builder",
-  "version": "0.2.0",
-  "description": "Builds foot-in-the-door offers two ways: contextualize an existing Extendly menu offer to a niche (Expert Secrets hook + story, hydrated OfferIQ 7 pillars, ad/VSL/landing copy), or build a new offer from scratch against the OfferIQ 7-pillar standard as a markdown submission packet. Outputs are markdown only. Self-contained; no token or MCP.",
+  "version": "0.3.0",
+  "description": "Builds foot-in-the-door offers two ways: contextualize an existing Extendly menu offer to a niche (Expert Secrets hook + story, hydrated OfferIQ 7 pillars, ad/VSL/landing copy) delivered as a markdown package plus a visual, self-contained HTML artifact, or build a new offer from scratch against the OfferIQ 7-pillar standard as a markdown submission packet. Self-contained; no token or MCP.",
   "author": {
     "name": "Extendly",
     "email": "zach@getextendly.com",

@@ -27,6 +27,8 @@ close them.
 @frameworks/offeriq-pillars.md (stage 4)
 @templates/niche-offer-package.md (assembly)
 @checklists/offer-quality.md (gate before delivery)
+@frameworks/artifact-rendering.md (stage 6: render the visual artifact)
+@templates/offer-package-artifact.html (stage 6: the self-contained HTML template)
 </references>
 
 <steps>
@@ -106,18 +108,49 @@ required - they are the same hook + story in deployable form):
 3. Present the finished package to the user and confirm the output path.
 4. On approval, write the file to the resolved path (create the folder if missing).
 
-Ask: "Package written to {path}. Want any section revised?"
+Ask: "Package written to {path}. Want any section revised before I render the
+visual version?"
 
-**Wait for approval before writing; revise on request.**
+**Wait for approval before writing; revise on request.** Once the markdown is
+approved, proceed to stage 6.
+</step>
+
+<step name="stage_6_artifact">
+Render the approved package as a **visual, self-contained HTML artifact** per
+`frameworks/artifact-rendering.md`, using `templates/offer-package-artifact.html`.
+
+1. Fill the template from the approved package (§0-§5 + build notes), overwriting
+   the sample content region by region. Add/remove repeatable units to match the
+   real package. Leave the `<style>`, the `<svg><defs>` icon library, and the
+   `<script>` untouched. Set the `<title>`, cover tag, rail title, and footer to
+   this offer + niche. Render failing pillars with the flag variant.
+2. **Keep it CSP-clean: no external hosts** (no CDN, webfont, remote image, or
+   fetch). Icons come from the inline `<symbol>` set; add a symbol rather than
+   linking one. No em dashes; attraction hook distinct from the call hook.
+3. Deliver:
+   - **If the `Artifact` tool is available** (preferred): publish the filled
+     document with `Artifact` (favicon `🎯`, a one-line description naming the
+     offer + niche). Give the user the returned URL and note it is private until
+     they share it.
+   - **If `Artifact` is not available**: wrap the document in the standard shell
+     (see the framework) and write it to `{same-folder}/{niche-slug}.html`; tell
+     the user the path.
+
+Ask: "Visual package ready at {url or path}. Want any changes?" Revise on request
+(edit the same file and republish to the same URL, or rewrite the file).
 </step>
 
 </steps>
 
 <output>
-One hydrated markdown file at the resolved output path containing: snapshot, niche
-definition, the one specific problem, the full narrative (new opportunity · big domino
-· epiphany bridge · 3 secrets), the 7 hydrated OfferIQ pillars with pass/fail, and the
-three deployable assets (ad hooks, VSL/story script, landing copy).
+Two artifacts of the same package:
+1. One hydrated markdown file at the resolved output path (the source of truth):
+   snapshot, niche definition, the one specific problem, the full narrative (new
+   opportunity · big domino · epiphany bridge · 3 secrets), the 7 hydrated OfferIQ
+   pillars with pass/fail, and the three deployable assets (ad hooks, VSL/story
+   script, landing copy).
+2. A visual, self-contained HTML artifact of that package - published as a native
+   Artifact (preferred) or written as a `{niche-slug}.html` file (fallback).
 </output>
 
 <acceptance-criteria>
@@ -128,5 +161,7 @@ three deployable assets (ad hooks, VSL/story script, landing copy).
 - [ ] All 7 pillars hydrated and marked pass/fail (fails resolved or flagged)
 - [ ] Three assets produced and consistent with the narrative
 - [ ] Package passes offer-quality checklist; no em dashes
-- [ ] File written to the confirmed output path
+- [ ] Markdown file written to the confirmed output path
+- [ ] Visual artifact rendered from the template, CSP-clean (no external hosts), its
+      scorecard matching the real pass/fail; delivered as a native Artifact or `.html`
 </acceptance-criteria>
