@@ -35,6 +35,9 @@ Build notes.
 - [ ] VSL/story script is read-aloud ready and matches the §3 narrative
 - [ ] Landing copy has headline, subhead, problem/agitate, new opportunity, secrets,
       offer, and a single CTA
+- [ ] AI Studio brief (§5d): paste-ready Build-mode prompt with purpose, audience,
+      messaging (reusing §5c copy), structure, style, and CTA; Assist map + checklist
+      present; consistent with §5c (same headline, offer, CTA)
 - [ ] Assets are consistent with the narrative (same hook + story, deployable form)
 
 ## House style
@@ -46,4 +49,5 @@ Build notes.
 - [ ] CSP-clean: no external hosts (no CDN script, webfont, remote image, or fetch)
 - [ ] Content matches the approved package (same hook + story), in the niche's vocabulary, no em dashes
 - [ ] Scorecard visual matches the real pass/fail (failing pillars use the flag variant)
+- [ ] §5d brief in the artifact is the truncated Build-mode prompt (flush-left, ASCII arrows), matching §5c
 - [ ] Delivered as a native Artifact, or as the wrapped `{niche-slug}.html` fallback file

@@ -8,6 +8,12 @@ Conventions: `{curly}` = variable to replace; `[square]` = prose to write. Remov
 placeholder brackets in the final file. **No em dashes anywhere.** Keep the
 **attraction hook** (ad/headline) distinct from the **call hook** (pillar 2).
 
+The outer ` ```template ` fence below is display scaffolding: write only its
+**contents** to the package file, not the fence lines themselves. Inside it, the §5d
+Build-mode prompt is shown in a `~~~text` fence so it nests cleanly; in the written
+file, render that prompt as a normal fenced code block (```` ```text ````) so the
+partner can copy it in one block.
+
 ---
 
 ```template
@@ -88,6 +94,55 @@ offer. Keep it tight.]
 - **The offer:** [what they get, framed by result-value]
 - **CTA:** [the single next action - book the call]
 
+### 5d. AI Studio landing-page brief
+> Paste into HighLevel: Funnels & Websites AI (or AI Studio) -> Build mode. Detail
+> wins; set a Brand Voice profile and upload the logo + brand images before
+> generating. Built per `frameworks/ai-studio-brief.md`.
+
+**Build-mode prompt (paste-ready):**
+
+~~~text
+Build a landing page for {business / the agency's client}, a {niche} business.
+
+PURPOSE: get {audience} to {primary action, e.g. book a 15-minute call}.
+
+AUDIENCE: {who, tight}. They struggle with {core pain} and want {desired outcome}.
+Main objection: {objection}; address it head-on.
+
+MESSAGING (use as the backbone; improve wording, keep meaning):
+  - Hero headline: "{§5c headline}"
+  - Subheadline: "{§5c subhead}"
+  - Core benefits: {benefit 1}, {benefit 2}, {benefit 3}, {benefit 4}
+  - Offer: {what they get}, {price / guarantee / turnaround}
+  - Proof: {proof point / stat / result}
+  - Primary CTA: "{§5c CTA text}"
+
+STRUCTURE (in order): Hero -> Problem -> New opportunity -> Benefits -> Proof ->
+Offer -> FAQ -> Final CTA with {calendar booking widget | lead form}.
+
+STYLE: Typography {modern|clean|premium|creative|editorial|energetic}; Layout
+{grid|split|editorial|gallery|section-based}; Palette {mood in words, no hex}.
+Paste a reference URL for inspiration and use the uploaded logo + brand images.
+
+Generate SEO meta title, description, and image alt text.
+~~~
+
+**Assist-mode field map** (if you use the guided path instead):
+
+| Assist field | Value |
+|---|---|
+| Name of the funnel page | {internal name} |
+| Business niche | {niche} |
+| Goal of the funnel page | {primary goal} |
+| Target audience | {who + core pain} |
+| What is being offered | {offer + price/guarantee} |
+| Language / Tone / Layout | {language} / {tone words} / {layout} |
+
+**Before you generate:** set a Brand Voice profile so copy sounds like the client;
+upload the logo + brand images (AI images are DALL-E-class, so keep key text as
+real page text); if a form won't connect by name, paste its Form ID; refine in Chat
+one change at a time; give the auto SEO meta a brand pass.
+
 ---
 
 ## Build notes
@@ -104,6 +159,7 @@ offer. Keep it tight.]
 | §1 Niche definition, §2 verifiability, §3d false beliefs | the research stage |
 | §3 narrative | `frameworks/narrative-engine.md` applied to the niche |
 | §4 pillars | `frameworks/offeriq-pillars.md` + the menu record's `pillars` block |
+| §5d AI Studio brief | `frameworks/ai-studio-brief.md`, projected from §1 (audience/pain), §3d (objections), §4 (offer/price), §5c (copy) |
 | `{date}` | stamp at write time |
 
 ## Section notes
@@ -113,5 +169,8 @@ offer. Keep it tight.]
 - §0 Snapshot is the at-a-glance summary; fill it last from the finished sections.
 - §3 and §5 share content by design: §3 is the strategy, §5 is the deployable form of
   the same hook + story. They must stay consistent.
+- §5d is that same package re-projected into a paste-ready HighLevel AI Studio prompt;
+  it must stay consistent with §5c (same headline, offer, CTA). The visual artifact
+  carries a truncated, copyable version of it.
 - The pillar table's "Passes?" column is gated by `checklists/offer-quality.md`. Any
   `n` must be resolved or flagged in Build notes before delivery.

@@ -25,6 +25,7 @@ close them.
 @tasks/research-niche.md (stage 1)
 @frameworks/narrative-engine.md (stage 3)
 @frameworks/offeriq-pillars.md (stage 4)
+@frameworks/ai-studio-brief.md (stage 5: the AI Studio landing-page brief, §5d)
 @templates/niche-offer-package.md (assembly)
 @checklists/offer-quality.md (gate before delivery)
 @frameworks/artifact-rendering.md (stage 6: render the visual artifact)
@@ -91,13 +92,19 @@ pillar pass/fail; resolve or flag any fail.
 </step>
 
 <step name="stage_5_assets">
-Compress the narrative into the three deployable assets (consistency with stages 2-4 is
+Compress the narrative into the four deployable assets (consistency with stages 2-4 is
 required - they are the same hook + story in deployable form):
 1. **Ad hook lines** - 5-10 attraction-hook variants across the 5 curiosity angles.
 2. **VSL / story script** - the spoken-form Epiphany Bridge, read-aloud ready, landing
    the Big Domino, knocking down the 3 secrets, transitioning to the offer.
 3. **Landing page copy** - headline · subhead · problem/agitate · new opportunity ·
    secrets/proof · offer · CTA.
+4. **AI Studio landing-page brief** (§5d) - per `frameworks/ai-studio-brief.md`, a
+   paste-ready HighLevel AI Studio Build-mode prompt, plus an Assist-mode field map
+   and a pre-generation checklist. Derive each field per that framework's source
+   table (audience/pain from §1 + §2, objection from §3d, benefits from the §3
+   reframes + offer result-value, proof from §2, offer/price from §4). Match §5c only
+   on headline, offer, and CTA (§5c has no benefits list, so do not source them there).
 </step>
 
 <step name="assemble_gate_and_write">
@@ -123,7 +130,9 @@ Render the approved package as a **visual, self-contained HTML artifact** per
    the sample content region by region. Add/remove repeatable units to match the
    real package. Leave the `<style>`, the `<svg><defs>` icon library, and the
    `<script>` untouched. Set the `<title>`, cover tag, rail title, and footer to
-   this offer + niche. Render failing pillars with the flag variant.
+   this offer + niche. Render failing pillars with the flag variant. For §5d, put
+   the **truncated** Build-mode prompt in the `.br-body` block (the full brief stays
+   in the markdown); keep its lines flush-left and use ASCII `->`.
 2. **Keep it CSP-clean: no external hosts** (no CDN, webfont, remote image, or
    fetch). Icons come from the inline `<symbol>` set; add a symbol rather than
    linking one. No em dashes; attraction hook distinct from the call hook.
@@ -147,8 +156,8 @@ Two artifacts of the same package:
 1. One hydrated markdown file at the resolved output path (the source of truth):
    snapshot, niche definition, the one specific problem, the full narrative (new
    opportunity · big domino · epiphany bridge · 3 secrets), the 7 hydrated OfferIQ
-   pillars with pass/fail, and the three deployable assets (ad hooks, VSL/story
-   script, landing copy).
+   pillars with pass/fail, and the four deployable assets (ad hooks, VSL/story
+   script, landing copy, and the full AI Studio landing-page brief).
 2. A visual, self-contained HTML artifact of that package - published as a native
    Artifact (preferred) or written as a `{niche-slug}.html` file (fallback).
 </output>
@@ -159,7 +168,8 @@ Two artifacts of the same package:
 - [ ] Pillar 1 problem is one sentence, close-to-money, verifiable, $100-300/mo
 - [ ] Narrative built in order, in the niche's vocabulary, attraction-hook ≠ call-hook
 - [ ] All 7 pillars hydrated and marked pass/fail (fails resolved or flagged)
-- [ ] Three assets produced and consistent with the narrative
+- [ ] Four assets produced and consistent with the narrative (ad hooks, VSL, landing copy, AI Studio brief)
+- [ ] §5d AI Studio brief is paste-ready and consistent with §5c (headline, offer, CTA); full in the markdown, truncated in the artifact
 - [ ] Package passes offer-quality checklist; no em dashes
 - [ ] Markdown file written to the confirmed output path
 - [ ] Visual artifact rendered from the template, CSP-clean (no external hosts), its

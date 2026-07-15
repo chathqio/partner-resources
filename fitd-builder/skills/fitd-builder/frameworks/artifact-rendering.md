@@ -136,8 +136,18 @@ The artifact mirrors the markdown package section for section.
 | §2 The one problem | `#problem` | the pull-quote + the three fact cards (close-to-money, verifiable, price-fit) |
 | §3 Narrative | `#narrative` | new opportunity, new vehicle, big domino, the epiphany-bridge story (mark the epiphany beat), the 3 secrets |
 | §4 The 7 pillars | `#scorecard` | verdict banner + the 7-pillar table with pass / needs-work badges |
-| §5 Deployable assets | `#assets` | 5a ad hooks (angle-tagged, copyable), 5b VSL script (copyable), 5c landing-page blocks (copyable) |
+| §5 Deployable assets | `#assets` | 5a ad hooks (angle-tagged, copyable), 5b VSL script (copyable), 5c landing-page blocks (copyable), 5d AI Studio brief (the `.fitd-brief` `<pre>`, copyable) |
 | Build notes | `#notes` | the footnote list |
+
+**§5d AI Studio brief.** The artifact carries the **truncated** Build-mode prompt
+(see `frameworks/ai-studio-brief.md`); the **full** brief (Build prompt + Assist map
++ checklist) lives in the markdown package's §5d. Fill the `.br-body` `<pre>` with
+the condensed prompt. **Every line must start at column 0** with no HTML-source
+indentation - a `<pre>` renders leading spaces verbatim, so an indented block looks
+wrong on the page. Use ASCII `->`, not em dashes. Its Copy button reads the block
+automatically (no separate copy string) and dedents, so the pasted prompt stays
+clean even if the source was indented - but the on-page render still needs column-0
+lines.
 
 The rail nav, the scroll-spy, and the mobile contents sheet are wired by the
 template's `<script>`; the section `id`s above must stay as written for them to work.
@@ -175,5 +185,6 @@ the document does not contradict itself. Use one phrasing everywhere:
 - [ ] Scorecard visual matches the real pass/fail (failing pillars use the flag variant)
 - [ ] The verdict reads the same in all six surfaces (rail chip, banner, glance cell, and each pillar); the glance cell is not green unless all pass
 - [ ] The one epiphany paragraph carries `class="epiphany"`; the first story paragraph is the backstory (it gets the drop cap)
+- [ ] §5d brief holds the truncated Build-mode prompt (flush-left `<pre>`, ASCII arrows, no em dashes), consistent with the markdown §5d and §5c copy
 - [ ] Delivered as a native Artifact, or as the wrapped `.html` fallback file (title in `<head>`)
 - [ ] The section `id`s are intact so the rail, scroll-spy, and mobile sheet work

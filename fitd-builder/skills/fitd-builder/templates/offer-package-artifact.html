@@ -36,6 +36,19 @@
          .fitd-pillar (exactly 7) . .fitd-hook (5-10) .
          .fitd-lp-block . .fitd-notes li
 
+     §5d AI STUDIO BRIEF: the `.br-body` is a <pre>. EVERY line must
+     start at column 0 with NO HTML-source indentation - both the
+     rendered page AND the copied prompt inherit leading spaces
+     verbatim. Begin the first line right after the opening tag. Write
+     arrows as literal "->" (the ">" needs no escaping); HTML-escape
+     only "&" (as &amp;) and "<" (as &lt;); the Copy button decodes
+     entities so the pasted prompt is clean. No em dashes. The Copy
+     button reads this block automatically. This is the TRUNCATED
+     Build-mode prompt (a condensed rewrite: drop the Assist map +
+     checklist, ~3 benefits, fold the objection into AUDIENCE); the
+     full brief lives in the markdown package. Per
+     frameworks/ai-studio-brief.md.
+
      FLAGGED PILLAR variant (when a pillar does not pass): see
      frameworks/artifact-rendering.md "Rendering a failing pillar"
      for the exact class + badge + verdict + rail-chip swaps.
@@ -331,6 +344,14 @@ p { margin: 0; }
 .fitd-lp-block.headline .lp-text { font-family: var(--font-headline); font-weight: 800; font-size: 21px; line-height: 1.25; letter-spacing: -0.01em; }
 .fitd-lp-block .fitd-copy { opacity: 1; }
 
+/* AI Studio brief (5d): a paste-ready prompt card */
+.fitd-brief { border: 1px solid var(--doc-hair); border-radius: 20px; overflow: hidden; background: #f7f9fc; }
+.fitd-brief .br-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 15px 20px; border-bottom: 1px solid var(--doc-hair-2); background: var(--fitd-accent-soft); }
+.fitd-brief .br-tag { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-headline); font-style: italic; font-weight: 700; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--fitd-accent-dark); }
+.fitd-brief .br-body { margin: 0; padding: 22px 24px; font-family: var(--font-body); font-size: 14.5px; line-height: 1.7; color: var(--doc-ink-2); white-space: pre-wrap; overflow-wrap: anywhere; }
+.fitd-brief .br-body strong { font-family: var(--font-headline); font-weight: 700; color: var(--doc-ink); }
+.fitd-brief .fitd-copy { opacity: 1; }
+
 /* ---------------- BUILD NOTES ---------------- */
 .fitd-notes .nt-head { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
 .fitd-notes .nt-head .ic { color: var(--doc-meta); }
@@ -415,6 +436,7 @@ p { margin: 0; }
 <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4.5" width="14" height="16" rx="2"/><rect x="9" y="2.8" width="6" height="3.8" rx="1"/><path d="M8.5 11h7M8.5 14.5h5"/></symbol>
 <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="11.5" height="11.5" rx="2"/><path d="M15.5 8.5V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v7.5a2 2 0 0 0 2 2h2.5"/></symbol>
 <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h12M8 12h12M8 18h12"/><path d="M3.8 6h.2M3.8 12h.2M3.8 18h.2"/></symbol>
+<symbol id="i-wand" viewBox="0 0 24 24"><path d="M4 20L13 11"/><path d="M16.4 3.2l1.05 3.15 3.15 1.05-3.15 1.05L16.4 11.6l-1.05-3.15L12.2 7.4l3.15-1.05z"/><path d="M6.6 5h.02"/><path d="M20 14.4h.02"/></symbol>
 </defs></svg>
 
 <div class="fitd-app">
@@ -500,7 +522,7 @@ p { margin: 0; }
             <div class="fitd-glance-cell"><div class="g-label">Verdict</div><div class="g-val pass">7 of 7 pillars pass</div></div>
             <div class="fitd-glance-cell"><div class="g-label">Monthly lost</div><div class="g-val">~$21,700</div></div>
             <div class="fitd-glance-cell"><div class="g-label">Offer price</div><div class="g-val">$100&ndash;$300/mo</div></div>
-            <div class="fitd-glance-cell"><div class="g-label">Deployable assets</div><div class="g-val">8 hooks · VSL · LP</div></div>
+            <div class="fitd-glance-cell"><div class="g-label">Deployable assets</div><div class="g-val">8 hooks · VSL · LP · brief</div></div>
           </div>
         </div>
       </section>
@@ -682,7 +704,7 @@ p { margin: 0; }
           <header class="fitd-sec-head">
             <div class="fitd-sec-row"><span class="fitd-sec-num">05</span><span class="fitd-sec-kicker">Ready to ship</span><span class="fitd-sec-rule"></span></div>
             <h2 class="fitd-sec-title">Deployable assets</h2>
-            <p class="fitd-sec-lede">The copy a partner puts to work the same day: ad hooks, a read-aloud VSL, and a full set of landing-page blocks.</p>
+            <p class="fitd-sec-lede">The copy a partner puts to work the same day: ad hooks, a read-aloud VSL, a full set of landing-page blocks, and a paste-ready HighLevel AI Studio brief.</p>
           </header>
 
           <div class="fitd-asset-group">
@@ -707,7 +729,7 @@ p { margin: 0; }
             </div>
           </div>
 
-          <div class="fitd-asset-group" style="margin-bottom:0">
+          <div class="fitd-asset-group">
             <div class="fitd-sub"><span class="sub-letter">5c</span><span class="sub-title">Landing-page copy</span><span class="sub-meta">6 blocks</span></div>
             <div class="fitd-lp">
               <div class="fitd-lp-block headline"><div class="lp-label">Headline</div><div class="lp-text">Book Every Estimate Call This Spring Without Pulling a Single Guy Off the Crew.</div><button class="fitd-copy" type="button"><svg class="ic"><use href="#i-copy"/></svg><span class="lbl">Copy</span></button></div>
@@ -716,6 +738,32 @@ p { margin: 0; }
               <div class="fitd-lp-block"><div class="lp-label">The new opportunity</div><div class="lp-text">Not a cheaper answering service. A front desk that thinks like your best office manager, built off your own services, answering every call 24/7, qualifying mow vs design vs install, and booking the estimate straight to your calendar.</div><button class="fitd-copy" type="button"><svg class="ic"><use href="#i-copy"/></svg><span class="lbl">Copy</span></button></div>
               <div class="fitd-lp-block"><div class="lp-label">The offer</div><div class="lp-text">Your own AI front desk, live in 72 hours, answering and booking every estimate call for $100 to $300/mo. Less than the answering service you&rsquo;d otherwise hire, and a single saved install job pays for years.</div><button class="fitd-copy" type="button"><svg class="ic"><use href="#i-copy"/></svg><span class="lbl">Copy</span></button></div>
               <div class="fitd-lp-block"><div class="lp-label">CTA</div><div class="lp-text">Book your 15-minute setup call and watch your new front desk catch a live test lead before you hang up.</div><button class="fitd-copy" type="button"><svg class="ic"><use href="#i-copy"/></svg><span class="lbl">Copy</span></button></div>
+            </div>
+          </div>
+
+          <div class="fitd-asset-group" style="margin-bottom:0">
+            <div class="fitd-sub"><span class="sub-letter">5d</span><span class="sub-title">AI Studio brief</span><span class="sub-meta">paste into HighLevel · Build mode</span></div>
+            <div class="fitd-brief">
+              <div class="br-top"><span class="br-tag"><svg class="ic"><use href="#i-wand"/></svg>HighLevel AI Studio · Build mode</span><button class="fitd-copy" type="button"><svg class="ic"><use href="#i-copy"/></svg><span class="lbl">Copy prompt</span></button></div>
+              <pre class="br-body">Build a landing page for a full-service lawn &amp; landscape company, marketed by their agency.
+
+PURPOSE: get the owner to book a 15-minute setup call.
+
+AUDIENCE: full-service lawn &amp; landscape owners doing $100k+/mo. They lose five-figure design and install jobs to voicemail while crews are in the field, and fear a robot will butcher their calls.
+
+MESSAGING (use as the backbone; improve wording, keep meaning):
+- Headline: "Book Every Estimate Call This Spring Without Pulling a Single Guy Off the Crew."
+- Subhead: an always-on AI front desk built for lawn &amp; landscape that answers in seconds, knows a mow from a $30k install, and books the estimate.
+- Benefits: never miss an estimate call; it qualifies mow vs design/install; live in 72 hours with no hiring.
+- Offer: your own AI front desk for $100 to $300/mo, live in 72 hours.
+- Proof: 78% of homeowners hire whoever answers first.
+- Primary CTA: "Book your 15-minute setup call."
+
+STRUCTURE: Hero -> Problem -> New opportunity -> Benefits -> Proof -> Offer -> FAQ -> Final CTA with a calendar booking widget.
+
+STYLE: Typography clean; Layout section-based; Palette trustworthy deep green with a warm neutral. Paste a reference URL for inspiration and use the uploaded logo.
+
+Generate SEO meta title, description, and image alt text.</pre>
             </div>
           </div>
         </div>
@@ -800,6 +848,16 @@ p { margin: 0; }
     if (script) { var body = script.querySelector('.sc-body'); return body ? body.textContent.replace(/\s+/g, ' ').trim() : ''; }
     var lp = btn.closest('.fitd-lp-block');
     if (lp) { var t = lp.querySelector('.lp-text'); return t ? t.textContent.trim() : ''; }
+    var brief = btn.closest('.fitd-brief');
+    if (brief) {
+      var b = brief.querySelector('.br-body');
+      if (!b) return '';
+      var text = b.textContent.replace(/^\n+/, '').replace(/\s+$/, '');
+      var lines = text.split('\n');
+      var indents = lines.filter(function (l) { return l.trim(); }).map(function (l) { return l.match(/^ */)[0].length; });
+      var min = indents.length ? Math.min.apply(null, indents) : 0;
+      return min ? lines.map(function (l) { return l.slice(min); }).join('\n') : text;
+    }
     return '';
   }
   document.querySelectorAll('.fitd-copy').forEach(function (btn) {

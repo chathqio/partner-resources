@@ -4,9 +4,10 @@ A **foot-in-the-door offer** builder for Claude Code, with two modes:
 
 - **contextualize** - take an existing Extendly menu offer and adapt it to a specific niche: the
   **hook + story** (built on Russell Brunson's Expert Secrets) that makes a specific owner stop, the
-  **OfferIQ 7-pillar mechanics** retuned for that niche, and **ready-to-run copy** (ad hooks, a
-  VSL/story script, landing-page copy). You get a markdown package **and a visual, self-contained
-  HTML artifact** of it (a native Artifact, or a `.html` file when Artifact is unavailable).
+  **OfferIQ 7-pillar mechanics** retuned for that niche, **ready-to-run copy** (ad hooks, a
+  VSL/story script, landing-page copy), and a **paste-ready HighLevel AI Studio brief** for building
+  the landing page. You get a markdown package **and a visual, self-contained HTML artifact** of it
+  (a native Artifact, or a `.html` file when Artifact is unavailable).
 - **build** - construct a brand-new offer from scratch against the OfferIQ 7-pillar standard, as a
   markdown submission packet you send to Extendly for review.
 
@@ -48,7 +49,8 @@ Example: `/fitd-builder:contextualize single-location med spas + Speed-to-Lead`
 2. **Research the niche** for its pains, vocabulary, current vehicle, dollars at stake, and objections.
 3. **Build the narrative** (new opportunity, the one belief, the epiphany-bridge story, the 3 secrets).
 4. **Hydrate the 7 OfferIQ pillars** for the niche.
-5. **Produce the assets** (ad hook lines, VSL/story script, landing copy) and write the package.
+5. **Produce the assets** (ad hook lines, VSL/story script, landing copy, and a paste-ready
+   HighLevel AI Studio landing-page brief) and write the package.
 6. **Render the visual artifact** - the same package as a self-contained HTML document (navy cover,
    section rail, 7-pillar scorecard, copy-to-clipboard assets), published as a native Artifact or
    saved as a `.html` file. No CDNs or external hosts: everything is inlined so it works offline and
