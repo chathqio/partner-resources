@@ -1,0 +1,32 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Skill",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/check-update.sh",
+            "args": ["${CLAUDE_PLUGIN_ROOT}"],
+            "asyncRewake": true,
+            "timeout": 60
+          }
+        ]
+      }
+    ],
+    "UserPromptExpansion": [
+      {
+        "matcher": "fitd-builder",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/check-update.sh",
+            "args": ["${CLAUDE_PLUGIN_ROOT}"],
+            "asyncRewake": true,
+            "timeout": 60
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,10 +1,15 @@
 ---
 name: monster-meta
-type: standalone
-version: 0.1.0
-category: advertising
 description: Monster Meta — strategic Facebook/Meta advertising skill combining a 20-chunk framework with the self-contained meta-graph MCP (never refuses a valid Graph API operation) for end-to-end campaign planning, deployment, and optimization.
+license: LicenseRef-Extendly-Partner
+compatibility: Claude Code on your own machine only. The skill is inert without the bundled meta-graph MCP server, which runs as a local uv/Python process and reads a long-lived Meta access token from your OS keychain. claude.ai skills cannot ship an MCP server, and cloud environments have no secret store, so there is nowhere safe to put the token. Install it from the extendly-partner-resources marketplace, not as an uploaded skill.
 allowed-tools: [Read, Write, Glob, Grep, Edit, Bash, AskUserQuestion, mcp__meta-graph__get_ad_accounts, mcp__meta-graph__get_account_info, mcp__meta-graph__get_account_pages, mcp__meta-graph__get_campaigns, mcp__meta-graph__get_campaign_details, mcp__meta-graph__create_campaign, mcp__meta-graph__update_campaign, mcp__meta-graph__get_adsets, mcp__meta-graph__get_adset_details, mcp__meta-graph__create_adset, mcp__meta-graph__update_adset, mcp__meta-graph__get_ads, mcp__meta-graph__get_ad_details, mcp__meta-graph__get_ad_creatives, mcp__meta-graph__get_creative_details, mcp__meta-graph__create_ad, mcp__meta-graph__create_ad_creative, mcp__meta-graph__update_ad, mcp__meta-graph__update_ad_creative, mcp__meta-graph__upload_ad_image, mcp__meta-graph__get_ad_image, mcp__meta-graph__get_ad_video, mcp__meta-graph__get_insights, mcp__meta-graph__search, mcp__meta-graph__search_interests, mcp__meta-graph__get_interest_suggestions, mcp__meta-graph__estimate_audience_size, mcp__meta-graph__search_behaviors, mcp__meta-graph__search_demographics, mcp__meta-graph__search_geo_locations, mcp__meta-graph__search_ads_archive, mcp__meta-graph__search_pages_by_name, mcp__meta-graph__create_budget_schedule, mcp__meta-graph__get_login_link, mcp__meta-graph__fetch, mcp__meta-graph__whoami, mcp__meta-graph__get_pixels]
+metadata:
+  version: 0.2.0
+  category: advertising
+  platforms: [cli]
+  marketplace: extendly-partner-resources
+  plugin: monster-meta
 ---
 
 <activation>

@@ -1,0 +1,30 @@
+{
+  "$comment": "Single source of truth for plugin versions and platform support. The update hook bundled with each plugin reads THIS FILE at origin/HEAD and compares it against the installed plugin.json. Keep 'version' as the first key inside each plugin object: scripts/check-update.sh parses it with awk and has no JSON dependency. When you bump a version, bump it in all three places in the same commit (VERSIONS.json, <plugin>/.claude-plugin/plugin.json, and the skill's metadata.version in SKILL.md) and run scripts/validate.sh to confirm they agree.",
+  "marketplace": "extendly-partner-resources",
+  "repo": "chathqio/partner-resources",
+  "platformVocabulary": {
+    "cli": "Claude Code on the user's own machine: terminal, IDE extension, or desktop app. Full plugin support (commands, hooks, MCP servers, userConfig).",
+    "cloud": "Claude Code cloud sessions: claude.ai/code, `claude --cloud`, routines, mobile. Loads the cloned repo's .claude/skills/, any plugin declared in the repo's .claude/settings.json, and hooks from both, so the self-update check runs here. Never reads the user's local ~/.claude. No secret store.",
+    "claude-ai": "claude.ai chat and Cowork, via a skill uploaded to the user's claude.ai account. NOT the same as claude.ai/code, which is `cloud`. SKILL.md frontmatter is limited to the six Agent Skills spec fields. No slash commands, no plugin hooks (so no self-update), no MCP servers, no dynamic context injection."
+  },
+  "plugins": {
+    "fitd-builder": {
+      "version": "0.5.0",
+      "platforms": ["cli", "cloud", "claude-ai"],
+      "skill": "fitd-builder/skills/fitd-builder",
+      "portableSkill": true,
+      "requires": [],
+      "cliOnlyPaths": ["fitd-builder/commands", "fitd-builder/hooks", "fitd-builder/.claude-plugin"],
+      "notes": "The skill directory is spec-compliant on its own, so the same folder is both the plugin's skill and the claude.ai upload bundle. Everything degrades gracefully: Artifact falls back to writing a .html file, and a failed live offer-menu fetch falls back to the bundled snapshot."
+    },
+    "monster-meta": {
+      "version": "0.2.0",
+      "platforms": ["cli"],
+      "skill": "monster-meta/skills/monster-meta",
+      "portableSkill": false,
+      "requires": ["uv", "meta_access_token"],
+      "cliOnlyPaths": ["monster-meta/commands", "monster-meta/hooks", "monster-meta/.claude-plugin", "monster-meta/mcp", "monster-meta/.mcp.json"],
+      "notes": "CLI only, and not a packaging gap we can close. The skill is useless without the bundled meta-graph MCP server, which needs a local uv/Python process and a long-lived Meta access token. claude.ai skills cannot ship an MCP server, and cloud environments have no secret store (their own docs warn against putting credentials in environment variables), so the token would be readable by anyone using the environment."
+    }
+  }
+}

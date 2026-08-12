@@ -9,5 +9,16 @@ uv.lock
 .env
 *.local
 
+# Generated claude.ai skill bundles - scripts/build-skill-bundle.py rebuilds them from the
+# plugin's own skill directory, so they are never committed
+dist/
+
+# Update-check throttle stamp, when CLAUDE_PLUGIN_DATA is unset and it falls back in-plugin
+.cache/
+
+# Per-machine Claude Code settings. .claude/settings.json IS tracked (it makes cloud
+# sessions load fitd-builder); the .local variant never should be
+.claude/settings.local.json
+
 # OS cruft
 .DS_Store

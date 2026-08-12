@@ -1,10 +1,15 @@
 ---
 name: fitd-builder
-type: standalone
-version: 0.4.0
-category: content
 description: Builds foot-in-the-door offers two ways. contextualize - adapt an existing Extendly menu offer to a specific niche (Expert Secrets hook + story + hydrated OfferIQ 7 pillars + ad/VSL/landing copy + a paste-ready HighLevel AI Studio landing-page brief), delivered as a markdown package plus a visual, self-contained HTML artifact. build - construct a brand-new offer from scratch against the OfferIQ 7-pillar standard as a markdown submission packet for Extendly.
+license: LicenseRef-Extendly-Partner
+compatibility: Runs unchanged in Claude Code (terminal, IDE, desktop), Claude Code cloud sessions, and claude.ai chat or Cowork. Needs no MCP server and no token; network access is optional. Without Artifact it writes a self-contained .html file instead, and if the live offer menu is unreachable it falls back to its bundled snapshot. On claude.ai the /fitd-builder slash commands do not exist, so ask in plain language instead.
 allowed-tools: [Read, Write, Glob, Grep, Edit, AskUserQuestion, WebSearch, WebFetch, Artifact]
+metadata:
+  version: 0.5.0
+  category: content
+  platforms: [cli, cloud, claude-ai]
+  marketplace: extendly-partner-resources
+  plugin: fitd-builder
 ---
 
 <activation>
@@ -76,9 +81,18 @@ person with a specific problem.
 | `/fitd-builder contextualize` | Adapt an existing menu offer to a niche: resolve menu → research → problem → narrative → 7 pillars → assets → one markdown package + a visual HTML artifact | tasks/contextualize-offer.md |
 | `/fitd-builder build` | Construct a new offer from scratch against the OfferIQ 7-pillar standard → markdown submission packet for Extendly | tasks/build-offer.md |
 | `/fitd-builder research` | Just the niche-research stage (pains, vocabulary, vehicle, dollars at stake, objections), anchored to a chosen offer | tasks/research-niche.md |
+
+On claude.ai (chat or Cowork) these slash commands do not exist - they come from the plugin's
+`commands/` files, which are Claude Code only. Route on intent instead: "adapt <offer> for
+<niche>" -> contextualize, "build me an offer for <what you deliver>" -> build, "research
+<niche>" -> research. If the intent is ambiguous, ask which of the three they want.
 </commands>
 
 <routing>
+Paths below are relative to this skill's own directory. In Claude Code the `@` prefix auto-loads
+them; on claude.ai and in Cowork, read the file yourself at the point the stage needs it. Same
+files, same order, either way.
+
 ## Always Load
 @context/offer-menu.md (how to resolve the live offer menu each run + the output-path policy)
 

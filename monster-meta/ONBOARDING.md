@@ -16,6 +16,29 @@ there - never redo a completed step.
 
 ---
 
+## Step 0 - stop if this is not a local Claude Code session
+
+**monster-meta is Claude Code only, on the user's own machine.** Check this first, before running
+anything or promising anything:
+
+- **No shell at all** (claude.ai chat or Cowork): stop. You cannot set this up.
+- **A Claude Code cloud session** (`claude.ai/code`, `claude --cloud`, a routine): stop. Do not try.
+
+Tell the user plainly why, and do not go looking for a workaround. There isn't one:
+
+1. The skill is inert without the bundled `meta-graph` MCP server. A claude.ai skill is a
+   directory of instructions; it cannot ship or start an MCP server.
+2. It needs a long-lived Meta access token with `ads_management`. On a local install that sits in
+   the OS keychain via the plugin's `userConfig`. Cloud environments have no secret store, and
+   Anthropic's own docs warn against putting credentials in their environment variables because
+   anyone using the environment can read them. Putting a live ad-account token there would be a
+   real exposure, not a technicality.
+
+What to offer instead: install Claude Code on their own machine and come back to this runbook, or
+use `fitd-builder`, which does run on claude.ai. See [`../PLATFORMS.md`](../PLATFORMS.md).
+
+---
+
 ## On session start: assess state, then act
 
 Run this quick state check (quietly), then jump to the first unfinished step.
@@ -144,3 +167,5 @@ confirmation; their token can spend money, so they own all activity on their acc
 | Writes fail with a permissions error | Missing `ads_management`, or only View (not Manage) on the ad account. |
 | `uv: command not found` | Install uv (Step 1) and restart Claude Code. |
 | Plugin not updating | Authenticate to GitHub (`gh auth login`) so `claude plugin update monster-meta` can reach the private repo. |
+| Update check never fires | `scripts/check-update.sh` must be executable. Run `./scripts/sync-plugin-scripts.sh` from the repo root, and check `EXTENDLY_SKILL_UPDATE_CHECK` is not `off`. Verify with `./monster-meta/scripts/check-update.sh "$PWD/monster-meta" --verbose`. |
+| Asked for monster-meta on claude.ai | Not possible. See **Step 0** above and [`../PLATFORMS.md`](../PLATFORMS.md). |

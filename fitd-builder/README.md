@@ -1,6 +1,6 @@
 # FITD Builder
 
-A **foot-in-the-door offer** builder for Claude Code, with two modes:
+A **foot-in-the-door offer** builder for Claude Code **and claude.ai**, with two modes:
 
 - **contextualize** - take an existing Extendly menu offer and adapt it to a specific niche: the
   **hook + story** (built on Russell Brunson's Expert Secrets) that makes a specific owner stop, the
@@ -24,10 +24,32 @@ fitd-builder (no token, no extra prerequisites). See the repo [README](../README
 ## Manual install
 
 ```bash
-# from inside your clone of partner-resources
-claude plugin marketplace add .
+# prefer the GitHub source: it's the only one `claude plugin update` can pull from
+claude plugin marketplace add chathqio/partner-resources
 claude plugin install fitd-builder@extendly-partner-resources
+
+# not signed in to GitHub yet? install from your clone instead, and know that
+# updates won't work until you run `gh auth login`:
+#   claude plugin marketplace add .
 ```
+
+Once installed, the plugin keeps itself current: whenever you use it, a background check compares
+its version against the repo and updates it when it's behind.
+
+## Using it without a terminal
+
+Full walkthrough for both routes below: [`../claude-ai/README.md`](../claude-ai/README.md).
+
+**Claude Code on the web** (`claude.ai/code`): nothing to install. The `partner-resources` repo's
+`.claude/settings.json` enables this plugin, so a cloud session on that repo installs it at session
+start, slash commands and automatic updates included.
+
+**claude.ai chat or Cowork**: this skill is self-contained, so it also runs as an uploaded claude.ai
+skill. Upload `fitd-builder/skills/fitd-builder/` as a zip under **Settings > Capabilities >
+Skills**, or run `./scripts/build-skill-bundle.py fitd-builder` to get the zip built for you. Two
+differences there: no slash commands (ask in plain language instead), and no automatic version
+updates, since claude.ai has no hook system to run the check (you re-upload when a new version
+ships).
 
 That's it. No token, no MCP, no restart. Full setup notes: [`ONBOARDING.md`](./ONBOARDING.md).
 

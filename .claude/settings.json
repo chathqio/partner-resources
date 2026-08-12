@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "extendly-partner-resources": {
+      "source": {
+        "source": "github",
+        "repo": "chathqio/partner-resources"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "fitd-builder@extendly-partner-resources": true
+  }
+}

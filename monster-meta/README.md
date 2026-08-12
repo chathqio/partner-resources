@@ -8,6 +8,12 @@ Marketing API and **never refuses an operation the Graph API supports**.
 Plan, build, audit, and scale real campaigns on **your own** ad accounts. You bring your own Meta
 access token; nothing routes through Extendly and you own all ad spend.
 
+> **Claude Code on your own machine only.** This one does not run on claude.ai or in a Claude Code
+> cloud session, and that isn't a packaging gap. The skill is inert without the bundled MCP server,
+> which runs as a local process, and its Meta token belongs in your OS keychain rather than in a
+> cloud environment that has no secret store. See [`../PLATFORMS.md`](../PLATFORMS.md). If you want
+> a partner tool that works on claude.ai, that's [`fitd-builder`](../fitd-builder).
+
 ## Easiest install: let Claude do it
 
 From the root of the `partner-resources` repo, start Claude and say **"Set up Monster Meta for me."**
@@ -24,8 +30,11 @@ partner-program membership).
 # 1. Install uv (runs the MCP server, no manual virtualenv)
 brew install uv        # or: curl -LsSf https://astral.sh/uv/install.sh | sh
 
-# 2. Add the marketplace (run from inside your clone of partner-resources)
-claude plugin marketplace add .
+# 2. Add the marketplace. Prefer the GitHub source: it's the only one
+#    `claude plugin update` can pull new versions from. Needs `gh auth login` first.
+claude plugin marketplace add chathqio/partner-resources
+#    Or, from inside your clone (updates won't work until you authenticate):
+#    claude plugin marketplace add .
 
 # 3. Create your Meta token first (see docs/meta-token-setup.md), then install.
 #    Secure: run this inside Claude Code and paste the token at the masked prompt —

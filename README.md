@@ -13,10 +13,15 @@ Claude, which walks you through everything one plugin at a time.
 
 ## What's inside
 
-| Plugin | What it does | Setup |
-|---|---|---|
-| [`monster-meta/`](./monster-meta) | Plan, build, audit, and scale Facebook/Meta ad campaigns on your own ad accounts via the bundled meta-graph MCP. | Needs `uv` + your own Meta token. See [`monster-meta/ONBOARDING.md`](./monster-meta/ONBOARDING.md). |
-| [`fitd-builder/`](./fitd-builder) | Craft a complete niche-specific foot-in-the-door offer: hook + story + hydrated OfferIQ pillars + ready ad/VSL/landing copy. | Install and go, no token. See [`fitd-builder/ONBOARDING.md`](./fitd-builder/ONBOARDING.md). |
+| Plugin | What it does | Runs on | Setup |
+|---|---|---|---|
+| [`monster-meta/`](./monster-meta) | Plan, build, audit, and scale Facebook/Meta ad campaigns on your own ad accounts via the bundled meta-graph MCP. | Claude Code only | Needs `uv` + your own Meta token. See [`monster-meta/ONBOARDING.md`](./monster-meta/ONBOARDING.md). |
+| [`fitd-builder/`](./fitd-builder) | Craft a complete niche-specific foot-in-the-door offer: hook + story + hydrated OfferIQ pillars + ready ad/VSL/landing copy. | Claude Code **and claude.ai** | Install and go, no token. See [`fitd-builder/ONBOARDING.md`](./fitd-builder/ONBOARDING.md). |
+
+**No terminal? Start here instead:** [`claude-ai/README.md`](./claude-ai/README.md). fitd-builder
+runs in claude.ai chat, in Cowork, and in Claude Code on the web. monster-meta genuinely cannot,
+because it needs a local MCP server process and a long-lived Meta token;
+[`PLATFORMS.md`](./PLATFORMS.md) explains what runs where and why.
 
 ---
 
@@ -57,8 +62,12 @@ you (a GitHub sign-in, a token, a restart). You can re-run this any time to add 
 ## Manual path - do it yourself
 
 ```bash
-# 1. Add this repo as a marketplace (run from inside the clone)
-claude plugin marketplace add .
+# 1. Add this repo as a marketplace. Prefer the GitHub source: it's the only one
+#    `claude plugin update` can pull new versions from.
+claude plugin marketplace add chathqio/partner-resources
+#    Not signed in to GitHub yet? Install from your local clone instead, and know
+#    that updates won't work until you run `gh auth login`:
+#    claude plugin marketplace add .
 
 # 2. See what's available
 claude plugin marketplace list
@@ -70,6 +79,26 @@ claude plugin install monster-meta@extendly-partner-resources     # then see mon
 
 Per-plugin setup lives in each plugin's `ONBOARDING.md` and `README.md`. Some plugins (like
 monster-meta) need extra prerequisites; the onboarding for that plugin covers them.
+
+---
+
+## Staying up to date
+
+**In Claude Code, updates are automatic** — on your own machine and on the web. Each plugin checks its own version whenever you use it
+and installs the new one when it's behind, then asks you to run `/reload-plugins`. The check runs in
+the background, so it never slows a tool down, and it stays quiet when you're current. If you'd
+rather be asked first, set `EXTENDLY_SKILL_UPDATE_CHECK=notify`; to turn it off entirely, set it to
+`off`.
+
+It relies on GitHub access to this private repo, so run `gh auth login` once if you haven't.
+
+Claude Code on the web (`claude.ai/code`) is covered too: it runs the same check, and a fresh cloud
+session installs the plugin from the marketplace anyway, so it starts current.
+
+**In claude.ai chat and Cowork, updates are manual.** An uploaded skill has no hook system, so it
+can't check itself. Ask "what version of the fitd-builder skill are you running?", compare it
+against [`VERSIONS.json`](./VERSIONS.json), and re-upload the bundle if you're behind.
+[`claude-ai/README.md`](./claude-ai/README.md) walks through it.
 
 ## Support
 
